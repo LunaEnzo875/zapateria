@@ -8,11 +8,11 @@ public class Cliente
     public DateOnly nacimiento {get; set;}
     public string correo {get; set;}
     
-    public Cliente {int dni,string nombre, string apellido, DateOnly nacimiento}
+    public Cliente (int dni,string nombre, string apellido, DateOnly nacimiento)
     {
         this.dni = dni;
         nombre = nombre;
         apellido = apellido;
         nacimiento = nacimiento;
     }
-    }
+}

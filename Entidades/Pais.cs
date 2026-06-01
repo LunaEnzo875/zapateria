@@ -1,4 +1,4 @@
-namespace namespace calzados;
+ namespace calzados;
 
 public class Pais 
 {
