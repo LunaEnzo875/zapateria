@@ -6,4 +6,5 @@ public class Zapatilla
     public Modelo modelo {get; set;}
     public string nombre {get; set;}
     public Pais pais {get; set;}
+    
 }
