@@ -3,15 +3,15 @@ namespace  calzados;
 public class Modelo
 {
     public int idModelo {get; set;}
-    public Fabricante fabricante {get; set;}
+    public int idFabricante {get; set;}
     public string nombre{get; set;}
     public int idPaisOrigen {get; set;}
 
-    public Modelo(int idModelo,Fabricante fabricante,string nombre,int idPaisOrigen)
+    public Modelo(int idModelo,int idFabricante,string nombre,int idPaisOrigen)
     {
         this.idModelo = idModelo;
-        fabricante=fabricante;
+        this.idFabricante=idFabricante;
         nombre = nombre;
-        idPaisOrigen = idPaisOrigen;
+        this.idPaisOrigen = idPaisOrigen;
     }
 }

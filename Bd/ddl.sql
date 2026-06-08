@@ -23,7 +23,7 @@ CREATE TABLE Color(
 
 CREATE TABLE Compra(
     numeroCompra int PRIMARY KEY AUTO_INCREMENT,
-    dni int PRIMARY KEY,
+    dni int,
     fechaHora DATETIME,
     FOREIGN KEY (dni) REFERENCES Cliente (dni)
 );
@@ -44,4 +44,25 @@ CREATE TABLE Devolucion(
     fechaHora DateTime
     FOREIGN KEY (idRazon) REFERENCES RazonDevolucion (idRazon),
     FOREIGN KEY (dni) REFERENCES Cliente (dni)
+);
+
+CREATE TABLE Fabricante(
+    idFabricante int PRIMARY KEY,
+    NombreFab varchar(45)
+);
+
+CREATE TABLE ModeloColor(
+idModelo int ,
+idColor int ,
+FOREIGN KEY (idModelo) REFERENCES Modelo(idModelo),
+FOREIGN KEY (idColor) REFERENCES Color(idColor)
+);
+
+CREATE TABLE Modelo(
+idModelo int PRIMARY KEY,
+idFabricante int,
+nombre VARCHAR(45),
+idPaisOrigen int,
+FOREIGN KEY (idPaisOrigen) REFERENCES Pais (idPaisOrigen),
+FOREIGN KEY (idFabricante) REFERENCES Fabricante(idFabricante)
 );
