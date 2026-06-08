@@ -36,6 +36,11 @@ CREATE TABLE DetalleCompra(
     precioUnitario int NOT NULL,
     cantidad int
 );
+CREATE TABLE RazonDevolucion(
+    idRazon int PRIMARY KEY,
+    Descripcion varchar(45)
+);
+
 
 CREATE TABLE Devolucion(
     idDevolucion int PRIMARY KEY AUTO_INCREMENT,
