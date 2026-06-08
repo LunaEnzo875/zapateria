@@ -36,3 +36,12 @@ CREATE TABLE DetalleCompra(
     precioUnitario int NOT NULL,
     cantidad int
 );
+
+CREATE TABLE Devolucion(
+    idDevolucion int PRIMARY KEY AUTO_INCREMENT,
+    dni int,
+    idRazon int,
+    fechaHora DateTime
+    FOREIGN KEY (idRazon) REFERENCES RazonDevolucion (idRazon),
+    FOREIGN KEY (dni) REFERENCES Cliente (dni)
+);
