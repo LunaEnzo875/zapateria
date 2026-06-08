@@ -77,3 +77,11 @@ FOREIGN KEY (idPais) REFERENCES Pais (idPais),
 FOREIGN KEY (idFabricante) REFERENCES Fabricante(idFabricante)
 );
 
+CREATE TABLE Zapatilla(
+    idZapatilla int PRIMARY KEY,
+    idModelo int,
+    idPais int,
+    nombre varchar(45),
+    FOREIGN KEY (idModelo) REFERENCES Modelo (idModelo),
+    FOREIGN KEY (idPais) REFERENCES Pais (idPais)
+);
