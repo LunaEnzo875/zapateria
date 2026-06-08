@@ -41,7 +41,7 @@ CREATE TABLE Devolucion(
     idDevolucion int PRIMARY KEY AUTO_INCREMENT,
     dni int,
     idRazon int,
-    fechaHora DateTime
+    fechaHora DateTime,
     FOREIGN KEY (idRazon) REFERENCES RazonDevolucion (idRazon),
     FOREIGN KEY (dni) REFERENCES Cliente (dni)
 );
@@ -58,11 +58,17 @@ FOREIGN KEY (idModelo) REFERENCES Modelo(idModelo),
 FOREIGN KEY (idColor) REFERENCES Color(idColor)
 );
 
+CREATE TABLE Pais(
+    idPais int PRIMARY KEY,
+    nombre VARCHAR(45)
+);
+
 CREATE TABLE Modelo(
 idModelo int PRIMARY KEY,
 idFabricante int,
 nombre VARCHAR(45),
-idPaisOrigen int,
-FOREIGN KEY (idPaisOrigen) REFERENCES Pais (idPaisOrigen),
+idPais int,
+FOREIGN KEY (idPais) REFERENCES Pais (idPais),
 FOREIGN KEY (idFabricante) REFERENCES Fabricante(idFabricante)
 );
+
