@@ -85,3 +85,12 @@ CREATE TABLE Zapatilla(
     FOREIGN KEY (idModelo) REFERENCES Modelo (idModelo),
     FOREIGN KEY (idPais) REFERENCES Pais (idPais)
 );
+
+CREATE TABLE Opinion(
+    dni int PRIMARY KEY,
+    idModelo int,
+    fechaHora DATETIME,
+    descripcion VARCHAR(45),
+    puntaje DECIMAL,
+    FOREIGN KEY (idModelo) REFERENCES Modelo (idModelo) 
+);
