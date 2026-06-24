@@ -34,7 +34,8 @@ CREATE TABLE DetalleCompra(
     talle int NOT NULL,
     idZapatilla int NOT NULL,
     precioUnitario int NOT NULL,
-    cantidad int
+    cantidad int,
+    FOREIGN KEY(idZapatilla) REFERENCES Zapatilla (idZapatilla)
 );
 CREATE TABLE RazonDevolucion(
     idRazon int PRIMARY KEY,
@@ -80,10 +81,9 @@ FOREIGN KEY (idFabricante) REFERENCES Fabricante(idFabricante)
 CREATE TABLE Zapatilla(
     idZapatilla int PRIMARY KEY,
     idModelo int,
-    idPais int,
+    stock int,
     nombre varchar(45),
-    FOREIGN KEY (idModelo) REFERENCES Modelo (idModelo),
-    FOREIGN KEY (idPais) REFERENCES Pais (idPais)
+    FOREIGN KEY (idModelo) REFERENCES Modelo (idModelo)
 );
 
 CREATE TABLE Opinion(
