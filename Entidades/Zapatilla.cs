@@ -7,4 +7,11 @@ public class Zapatilla
     public string nombre {get; set;}
     public int stock  {get; set;}
     
+    public Zapatilla (int idZapatilla,Modelo modelo,string Nombre,int Stock)
+    {
+        this.idZapatilla = idZapatilla;
+        modelo =  modelo;
+        nombre = Nombre;
+        stock = Stock;
+    }
 }
