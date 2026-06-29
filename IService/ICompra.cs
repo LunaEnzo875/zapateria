@@ -1,8 +1,8 @@
 using calzados;
 namespace calzadosIService;
 
-public interface IClienteService
+public interface ICompraService
 {
-    Result<IEnumerable<Cliente>> GetClientes();
+    Result<IEnumerable<Com>> GetClientes();
     Result<ClienteResponse> AltaCliente(Cliente cliente);
 }
