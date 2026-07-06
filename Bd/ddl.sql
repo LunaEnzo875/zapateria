@@ -12,7 +12,7 @@ CREATE TABLE Cliente(
     dni int PRIMARY KEY AUTO_INCREMENT,
     nombre varchar(45) not null,
     apellido varchar(45) not null,
-    nacimiento DATETIME not null,
+    nacimiento DATE not null,
     correo varchar(45) not null
 );
 
