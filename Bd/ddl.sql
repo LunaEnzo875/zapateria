@@ -37,6 +37,7 @@ CREATE TABLE DetalleCompra(
     cantidad int,
     FOREIGN KEY(idZapatilla) REFERENCES Zapatilla (idZapatilla)
 );
+
 CREATE TABLE RazonDevolucion(
     idRazon int PRIMARY KEY,
     Descripcion varchar(45)

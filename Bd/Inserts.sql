@@ -27,16 +27,7 @@ INSERT INTO DetalleCompra (numeroCompra,idModelo,talle,idZapatilla,precioUnitari
 INSERT INTO Devolucion (idDevolucion,dni,idRazon,fechaHora) VALUES
 (1, 48526379, 1, '2026-07-13 15:00'),
 (2, 47702699, 2, '2026-07-12 11:30'),
-(3, 47396736, 3, '2026-07-12 09:45'),
-
-
-
-
-
-
-
-
- 
+(3, 47396736, 3, '2026-07-12 09:45'), 
 (4, 47482374, 1, '2026-07-10 16:20');
 
 INSERT INTO Fabricante (idFabricante,NombreFab) VALUES
@@ -64,19 +55,23 @@ INSERT INTO Opinion (dni,idModelo,fechaHora,descripcion,puntaje) VALUES
 (47482374, 203, '2026-07-10 14:00', '');
 
 INSERT INTO Pais (idPais,nombre) VALUES
-(1, ),
-(2),
-(3),
-(4);
+(1,'Argentina'),
+(2,'Paraguay'),
+(3,'China'),
+(4,'Brasil');
 
 INSERT INTO RazonDevolucion (idRazon,Descripcion) VALUES
-(),
-(),
-(),
-();
+(1,'No e¿son los zapatos que pedi'),
+(2,'no era mi talla'),
+(3,'No es el modelo que pedi'),
+(4,'otro');
 
 INSERT INTO Zapatilla (idZapatilla,idModelo,stock,nombre) VALUES
-(),
-(),
-(),
-();
+(1,1,500),
+(2,2,450),
+(3,3,450),
+(4,4,450),
+(5,1,540),
+(6,3,600),
+(7,2,777),
+(8,2,666);
