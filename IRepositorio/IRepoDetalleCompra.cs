@@ -2,6 +2,6 @@ namespace ZapatosRepo;
 
 public interface IRepoDetalleCompra
 {
-    IEnumerable<ClienteResponse> GetClientes();
-    Cliente? DetalleCliente(int idCliente);
+    IEnumerable<DetalleCompraDto> GetDetalleCompra();
+    DetalleCompra? DetalleCompra(int idDetalleCompra);
 }
