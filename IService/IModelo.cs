@@ -4,5 +4,5 @@ namespace calzadosIService;
 public interface IModeloService
 {
     Result<IEnumerable<Modelo>> GetModelo();
-    Result<Modelo> AltaModelo(Modelo modelo);
+    Result<ModeloDto> AltaModelo(Modelo modelo);
 }

@@ -4,5 +4,5 @@ namespace calzadosIService;
 public interface IClienteService
 {
     Result<IEnumerable<Cliente>> GetClientes();
-    Result<ClienteResponse> AltaCliente(Cliente cliente);
+    Result<ClienteDto> AltaCliente(Cliente cliente);
 }
