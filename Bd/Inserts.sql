@@ -1,10 +1,10 @@
 SET AUTOCOMMIT=0;
 START TRANSACTION;
 
-INSERT INTO Cliente (dni,nombre,apellido,nacimiento,correo) VALUES
-(48526379,'Enzo','Luna','2008-04-04','enzoluna760@gmail.com'),
-(47702699, 'Ezequiel', 'Lizasoain', '2007-07-06','monkicapo@gmail.com');
-(47396736, 'Carla', 'Gonzalez', '2007-05-12', 'carla.gonzalez@gmail.com');
+INSERT INTO Cliente (idCliente,dni,nombre,apellido,nacimiento,correo) VALUES
+(1,48526379,'Enzo','Luna','2008-04-04','enzoluna760@gmail.com'),
+(2,47702699, 'Ezequiel', 'Lizasoain', '2007-07-06','monkicapo@gmail.com');
+(3,47396736, 'Carla', 'Gonzalez', '2007-05-12', 'carla.gonzalez@gmail.com');
 
 INSERT INTO Color (idColor,nombre) VALUES
 (1, 'azul'),

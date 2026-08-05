@@ -9,7 +9,8 @@ use 5to_Calzados
 
 
 CREATE TABLE Cliente(
-    dni int PRIMARY KEY AUTO_INCREMENT,
+    idCliente int PRIMARY KEY AUTO_INCREMENT,
+    dni int not null,
     nombre varchar(45) not null,
     apellido varchar(45) not null,
     nacimiento DATE not null,
