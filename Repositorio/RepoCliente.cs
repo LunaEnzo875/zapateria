@@ -1,7 +1,10 @@
+using MySql.Data.MySqlClient;
+
 namespace ZapatosRepo;
 
 public class Repocliente
 {
+    private readonly IAdo _ado;
     private static readonly string _Clientes
         = "SELECT * FROM Cliente";
     public IEnumerable<ClienteDto> GetClientes() => _conexion.Query<ClienteDto>(_Clientes);

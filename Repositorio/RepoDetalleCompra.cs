@@ -2,6 +2,7 @@ namespace ZapatosRepo;
 
 public class RepoDetalleCompra
 {
+    private readonly IAdo _ado;
     private static readonly string _DetCompra
         = "SELECT * FROM DetalleCompra";
 
