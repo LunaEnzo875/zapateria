@@ -1,4 +1,4 @@
-namespace calzadosDto;
+namespace Core.Dto;
 
 public class DevolucionDto
 {

@@ -1,4 +1,4 @@
-namespace calzadodto;
+namespace Core.Dto;
 
 public class ColorDto
 {

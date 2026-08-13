@@ -1,10 +1,11 @@
 using System.Drawing;
-
-namespace ZapatosRepo;
+using Core.Entidades;
+using Core.Dto;
+namespace Core.IRepositorio;
 
 public interface IRepoColor
 {
     IEnumerable<ColorDto> GetClientes();
-    Color? DetalleCliente(int idColor);
-    void AltaCliente(Color color);
+    ColorDto? DetalleCliente(int idColor);
+    void AltaCliente(ColorDto color);
 }

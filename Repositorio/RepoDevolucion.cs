@@ -1,5 +1,5 @@
-using calzadodto;
-using caldos;
+using Core.Dto;
+using Core.IService;
 namespace ZapatosRepo;
 
 public class RepoDevolucion

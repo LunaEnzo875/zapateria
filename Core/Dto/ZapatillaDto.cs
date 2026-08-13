@@ -1,6 +1,6 @@
-using calzados;
+using Core.Entidades;
 
-namespace  calzadosDto;
+namespace  Core.Dto;
 
 public class ZapatillaDto 
 {

@@ -83,6 +83,7 @@ FOREIGN KEY (idFabricante) REFERENCES Fabricante(idFabricante)
 CREATE TABLE Zapatilla(
     idZapatilla int PRIMARY KEY,
     idModelo int,
+    talla int,
     stock int,
     nombre varchar(45),
     FOREIGN KEY (idModelo) REFERENCES Modelo (idModelo)

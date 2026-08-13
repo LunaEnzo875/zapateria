@@ -1,4 +1,4 @@
- namespace calzados;
+namespace Core.Entidades;
 
 public class Opinion 
 {
@@ -14,5 +14,5 @@ public class Opinion
         fechaHora = FechaHora;
         descripcion = Descripcion;
         puntaje = Puntaje;
-    }    
+    }
 }

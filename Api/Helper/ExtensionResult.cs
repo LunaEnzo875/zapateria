@@ -1,5 +1,4 @@
-using calzados;
-using calzadosExtension;
+
 namespace calzadosExtension;
 
 public static class ResultExtensions

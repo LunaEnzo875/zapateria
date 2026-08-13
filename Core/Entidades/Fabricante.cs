@@ -1,4 +1,4 @@
-namespace  calzados;
+namespace  Core.Entidades;
 
 public class Fabricante 
 {

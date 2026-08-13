@@ -3,7 +3,7 @@ START TRANSACTION;
 
 INSERT INTO Cliente (idCliente,dni,nombre,apellido,nacimiento,correo) VALUES
 (1,48526379,'Enzo','Luna','2008-04-04','enzoluna760@gmail.com'),
-(2,47702699, 'Ezequiel', 'Lizasoain', '2007-07-06','monkicapo@gmail.com');
+(2,47702699, 'Ezequiel', 'Lizasoain', '2007-07-06','monkicapo@gmail.com'),
 (3,47396736, 'Carla', 'Gonzalez', '2007-05-12', 'carla.gonzalez@gmail.com');
 
 INSERT INTO Color (idColor,nombre) VALUES
@@ -66,12 +66,28 @@ INSERT INTO RazonDevolucion (idRazon,Descripcion) VALUES
 (3,'No es el modelo que pedi'),
 (4,'otro');
 
-INSERT INTO Zapatilla (idZapatilla,idModelo,stock,nombre) VALUES
-(1,1,500),
-(2,2,450),
-(3,3,450),
-(4,4,450),
-(5,1,540),
-(6,3,600),
-(7,2,777),
-(8,2,666);
+INSERT INTO Zapatilla (idZapatilla,idModelo,talle,stock,nombre) VALUES
+(1,1,30,500),
+(2,2,30,450),
+(3,3,30,450),
+(4,4,30,450),
+(5,1,30,540),
+(6,3,30,600),
+(7,2,30,777),
+(8,2,30,666),
+(1,1,35,500),
+(2,2,35,450),
+(3,3,35,450),
+(4,4,35,450),
+(5,1,35,540),
+(6,3,35,600),
+(7,2,35,777),
+(8,2,35,666),
+(1,1,40,500),
+(2,2,40,450),
+(3,3,40,450),
+(4,4,40,450),
+(5,1,40,540),
+(6,3,40,600),
+(7,2,40,777),
+(8,2,40,666);

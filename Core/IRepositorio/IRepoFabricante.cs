@@ -1,4 +1,6 @@
-namespace ZapatosRepo;
+using Core.Dto;
+using Core.Entidades;
+namespace Core.IRepositorio;
 
 public interface IRepoFabricante
 {

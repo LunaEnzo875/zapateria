@@ -1,8 +1,10 @@
-using calzados;
+using Core.Dto;
+using Core.Entidades;
+
 namespace calzadosIService;
 
 public interface IClienteService
 {
-    Result<IEnumerable<Cliente>> GetClientes();
+    Result<IEnumerable<ClienteDto>> GetClientes();
     Result<ClienteDto> AltaCliente(Cliente cliente);
 }

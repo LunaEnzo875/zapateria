@@ -235,6 +235,16 @@
         "runtime": {
           "lib/net9.0/ZstdSharp.dll": {}
         }
+      },
+      "Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.dll": {}
+        }
       }
     }
   },
@@ -577,40 +587,56 @@
         "zstdsharp.port.0.8.8.nupkg.sha512",
         "zstdsharp.port.nuspec"
       ]
+    },
+    "Core/1.0.0": {
+      "type": "project",
+      "path": "../Core/Core.csproj",
+      "msbuildProject": "../Core/Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "Core >= 1.0.0",
       "Dapper >= 2.1.79",
       "MySql.Data >= 26.7.0"
     ]
   },
   "packageFolders": {
-    "/home/et12alumno/.nuget/packages/": {}
+    "C:\\Users\\Lab20-PC02\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/et12alumno/Escritorio/zapateria/Repositorio/Repositorio.csproj",
+      "projectUniqueName": "C:\\Users\\Lab20-PC02\\Desktop\\zapateria\\Repositorio\\Repositorio.csproj",
       "projectName": "Repositorio",
-      "projectPath": "/home/et12alumno/Escritorio/zapateria/Repositorio/Repositorio.csproj",
-      "packagesPath": "/home/et12alumno/.nuget/packages/",
-      "outputPath": "/home/et12alumno/Escritorio/zapateria/Repositorio/obj/",
+      "projectPath": "C:\\Users\\Lab20-PC02\\Desktop\\zapateria\\Repositorio\\Repositorio.csproj",
+      "packagesPath": "C:\\Users\\Lab20-PC02\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lab20-PC02\\Desktop\\zapateria\\Repositorio\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/et12alumno/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Lab20-PC02\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
-        "/usr/lib/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Lab20-PC02\\Desktop\\zapateria\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\Lab20-PC02\\Desktop\\zapateria\\Core\\Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -623,7 +649,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net10.0": {
@@ -654,7 +680,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.108/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

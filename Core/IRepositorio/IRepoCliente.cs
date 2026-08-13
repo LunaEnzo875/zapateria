@@ -1,8 +1,10 @@
-namespace ZapatosRepo;
+using Core.Dto;
+using Core.Entidades;
+namespace Core.IRepositorio;
 
 public interface IRepoCliente
 {
-    IEnumerable<Cliente> GetClientes();
+    IEnumerable<ClienteDto> GetClientes();
     Cliente? DetalleCliente(int idCliente);
     void AltaCliente(Cliente cliente);
     void UpdateCliente(Cliente cliente, int id);

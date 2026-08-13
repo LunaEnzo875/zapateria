@@ -1,17 +1,28 @@
-using calzados;
+using Core.Entidades;
+using Core.IService;
+using Core.Dto;
+using Core.IService;
+using Core.IRepositorio;
 using calzadosIService;
-using calzadodto;
 namespace ServiceZapatos;
 
 public class ServiceColor : IColorService
 {
-    readonly IColorService _IColor;
-    readonly 
-    public ClienteService (IColorService IColor)
+    readonly IRepoColor _IColor;
+    public ServiceColor (IRepoColor IColor)
     {
-        _IColor = IColorr;
+        _IColor = IColor;
     }
 
+    public Result<ColorDto> AltaColor(Color color)
+    {
+        throw new NotImplementedException();
+    }
 
     public Result<IEnumerable<ColorDto>> GetColor() => Result<IEnumerable<ColorDto>>.Ok(_IColor.GetColor());
+
+    Result<IEnumerable<Color>> IColorService.GetColor()
+    {
+        throw new NotImplementedException();
+    }
 }

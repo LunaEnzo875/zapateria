@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace calzados;
+namespace Core.Entidades;
 
 public class ModeloColor
 {

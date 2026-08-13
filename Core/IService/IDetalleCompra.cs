@@ -1,8 +1,10 @@
-using calzados;
+using Core.Dto;
+using Core.Entidades;
+
 namespace calzadosIService;
 
 public interface IDetallleCompraService
 {
-    Result<IEnumerable<DetallleCompra>> GetDetallleCompra();
-    Result<DetalleCompraDto> AltaDetallleCompra (DetallleCompra detallleCompra);
+    Result<IEnumerable<DetalleCompra>> GetDetallleCompra();
+    Result<DetalleCompraDto> AltaDetallleCompra (DetalleCompra detalleCompra);
 }

@@ -1,8 +1,9 @@
-using calzados;
+using Core.Dto;
+using Core.Entidades;
 namespace calzadosIService;
 
 public interface ICompraService
 {
-    Result<IEnumerable<Com>> GetClientes();
+    Result<IEnumerable<Compra>> GetClientes();
     Result<DetalleCompraDto> AltaCliente(Cliente cliente);
 }

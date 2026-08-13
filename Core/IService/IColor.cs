@@ -1,4 +1,5 @@
-using calzados;
+using Core.Dto;
+using Core.Entidades;
 namespace calzadosIService;
 
 public interface IColorService

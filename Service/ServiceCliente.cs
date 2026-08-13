@@ -1,17 +1,28 @@
-using calzados;
+using Core.IRepositorio;
+using Core.Dto;
+using Core.IService;
+using Core.Entidades;
 using calzadosIService;
-using calzadodto;
+
 namespace ServiceZapatos;
 
 public class ServiceCliente : IClienteService
 {
-    readonly IClienteService _ICliente;
-    readonly 
-    public ClienteService (IClienteService ICliente)
+    readonly IRepoCliente _ICliente;
+    public ServiceCliente (IRepoCliente ICliente)
     {
         _ICliente = ICliente;
     }
 
+    public Result<ClienteDto> AltaCliente(Cliente cliente)
+    {
+        throw new NotImplementedException();
+    }
 
     public Result<IEnumerable<ClienteDto>> GetClientes() => Result<IEnumerable<ClienteDto>>.Ok(_ICliente.GetClientes());
+
+    Result<IEnumerable<ClienteDto>> IClienteService.GetClientes()
+    {
+        throw new NotImplementedException();
+    }
 }
