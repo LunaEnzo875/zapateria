@@ -1,5 +1,7 @@
 using MySql.Data.MySqlClient;
-
+using Core.IService;
+using Core.Dto;
+using Core.Entidades;
 namespace ZapatosRepo;
 
 public class Repocliente

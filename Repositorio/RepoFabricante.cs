@@ -1,3 +1,4 @@
+using Core.IService;
 namespace ZapatosRepo;
 
 public class RepoFabricante

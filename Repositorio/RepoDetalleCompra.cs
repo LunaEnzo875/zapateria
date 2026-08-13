@@ -1,3 +1,6 @@
+using Core.Dto;
+using Core.Entidades;
+using Core.IService;
 namespace ZapatosRepo;
 
 public class RepoDetalleCompra

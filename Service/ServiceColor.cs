@@ -1,5 +1,4 @@
 using Core.Entidades;
-using Core.IService;
 using Core.Dto;
 using Core.IRepositorio;
 using calzadosIService;

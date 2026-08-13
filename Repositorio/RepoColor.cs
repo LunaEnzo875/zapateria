@@ -1,5 +1,5 @@
 using MySql.Data.MySqlClient;
-
+using Core.Dto;
 namespace ZapatosRepo;
 
 public class RepoColor

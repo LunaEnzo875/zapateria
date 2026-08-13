@@ -5,7 +5,7 @@ namespace Core.IRepositorio;
 
 public interface IRepoColor
 {
-    IEnumerable<ColorDto> GetClientes();
-    ColorDto? DetalleCliente(int idColor);
-    void AltaCliente(ColorDto color);
+    IEnumerable<ColorDto> GetColor();
+    ColorDto? DetalleColor(int idColor);
+    void AltaColor(ColorDto color);
 }
