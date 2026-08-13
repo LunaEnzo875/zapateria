@@ -4,14 +4,11 @@ using System.Data;
 namespace ZapatosRepo;
 public class Ado : IAdo
 {
-    private readonly string _connection;
-    public Ado(string connection)
-    {
-        _connection = connection;
-    }
+    private readonly string _conexion;
+    public Ado(IDataBaseConnectionService _service, IGetRolActualService _serviceRol) => _conexion = _service.GetConnectionUserString(_serviceRol.GetRolActual());
 
     public IDbConnection GetDbConnection()
     {
-        return new MySqlConnection(_connection);
-    }
+        return new MySqlConnection(_conexion);
+    }    
 }
