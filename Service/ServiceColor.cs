@@ -1,7 +1,6 @@
 using Core.Entidades;
 using Core.IService;
 using Core.Dto;
-using Core.IService;
 using Core.IRepositorio;
 using calzadosIService;
 namespace ServiceZapatos;
