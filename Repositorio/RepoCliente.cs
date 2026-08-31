@@ -3,7 +3,6 @@ using Core.IService;
 using Core.Dto;
 using Core.Entidades;
 using Core.IRepositorio;
-using Org.BouncyCastle.Asn1.Iana;
 using Dapper;
 namespace ZapatosRepo;
 
@@ -22,7 +21,6 @@ public class Repocliente : Repo, IRepoCliente
 
     private static readonly string _queryDetalleCliente 
         = @"SELECT * FROM Cliente WHERE idCliente = @idCliente";
-
     
     public Cliente? DetalleCliente(int idCliente) 
     {

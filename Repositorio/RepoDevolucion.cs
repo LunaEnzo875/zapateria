@@ -11,13 +11,14 @@ public class RepoDevolucion : Repo, IRepoDevolucion
     public RepoDevolucion(IAdo _ado) : base(_ado)
     {
         this._ado = _ado;
+    }
+    public Devolucion? Devolucion(int idDevolucion)
+    {
+        throw new NotImplementedException();
     }    
     private static readonly string _Devol
     = "SELECT * FROM Devolucion";
 
     public IEnumerable<DevolucionDto> GetDevolucion() => _conexion.Query<DevolucionDto>(_Devol);//_conexion.Query<ColorDto>(_Devol);
-    public Devolucion? Devolucion(int idDevolucion)
-    {
-        throw new NotImplementedException();
-    }
+    
 }
