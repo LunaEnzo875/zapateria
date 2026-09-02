@@ -2,6 +2,7 @@ using Core.Entidades;
 using Core.Dto;
 using Core.IRepositorio;
 using calzadosIService;
+
 namespace ServiceZapatos;
 
 public class ServiceColor : IColorService
@@ -17,10 +18,12 @@ public class ServiceColor : IColorService
         throw new NotImplementedException();
     }
 
-    public Result<IEnumerable<ColorDto>> GetColor() => Result<IEnumerable<ColorDto>>.Ok(_IColor.GetColor());
-
     Result<IEnumerable<Color>> IColorService.GetColor()
     {
         throw new NotImplementedException();
     }
+
+    public Result<IEnumerable<ColorDto>> GetColor() => Result<IEnumerable<ColorDto>>.Ok(_IColor.GetColor());
+
+    
 }

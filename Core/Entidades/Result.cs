@@ -1,4 +1,5 @@
 using calzadosResult;
+using Core.Dto;
 
 namespace Core.Entidades;
 
@@ -38,4 +39,19 @@ public class Result<T>
     
     public static Result<T> File(byte[]? bytes)
         => new(true, TiposResult.File, default, default, default, bytes);
+
+    public static Result<IEnumerable<Modelo>> Ok(IEnumerable<Modelo> enumerable)
+    {
+        throw new NotImplementedException();
+    }
+
+    public static Result<IEnumerable<Modelo>> Ok(Func<IEnumerable<Modelo>> getModelo)
+    {
+        throw new NotImplementedException();
+    }
+
+    public static Result<IEnumerable<RazonDevolucion>> Ok(IEnumerable<DevolucionDto> enumerable)
+    {
+        throw new NotImplementedException();
+    }
 }
