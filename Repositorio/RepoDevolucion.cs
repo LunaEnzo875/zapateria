@@ -19,6 +19,6 @@ public class RepoDevolucion : Repo, IRepoDevolucion
     private static readonly string _Devol
     = "SELECT * FROM Devolucion";
 
-    public IEnumerable<DevolucionDto> GetDevolucion() => _conexion.Query<DevolucionDto>(_Devol);//_conexion.Query<ColorDto>(_Devol);
+    public IEnumerable<DevolucionDto> GetDevolucion() => _conexion.Query<DevolucionDto>(_Devol);
     
 }

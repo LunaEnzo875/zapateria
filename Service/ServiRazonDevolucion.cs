@@ -6,26 +6,26 @@ using calzadosIService;
 
 namespace ServiceZapatos;
 
-public class ServiRazonDevolucion : IDevolucionService
+public class ServiDevolucion : IDevolucionService
 {
-   public readonly IRepoDevolucion _repositorioRazonDevolucion;
+   public readonly IRepoDevolucion _repositorioDevolucion;
 
-    public ServiRazonDevolucion(IRepoDevolucion repoDevolucion)
+    public ServiDevolucion(IRepoDevolucion repoDevolucion)
     {
-        _repositorioRazonDevolucion = repoDevolucion;
+        _repositorioDevolucion = repoDevolucion;
     }
 
-    Result<IEnumerable<RazonDevolucion>> IDevolucionService.GetDevolucion()
+    Result<IEnumerable<Devolucion>> IDevolucionService.GetDevolucion()
     {
         return GetDevolucion();
     }
 
-    public Result<RazonDevolucion> AltaDevolucion(RazonDevolucion razonDevolucion)
+    public Result<Devolucion> AltaDevolucion(Devolucion Devolucion)
     {
         throw new NotImplementedException();
     }
 
-     Result<IEnumerable<RazonDevolucion>> GetDevolucion() =>  Result<IEnumerable<RazonDevolucion>>.Ok(_repositorioRazonDevolucion.GetDevolucion());
+    public Result<IEnumerable<Devolucion>> GetDevolucion() =>  Result<IEnumerable<Devolucion>>.Ok(_repositorioDevolucion.GetDevolucion());
 
    
 }
