@@ -1,11 +1,12 @@
-
+using calzadosResult;
+using Core.Entidades;
 namespace calzadosExtension;
 
 public static class ResultExtensions
 {
     public static IResult ToMinimalResult<T>(this Result<T> result)
     {
-    
+
         return result.ResultType switch
         {
             TiposResult.Ok => Results.Ok(result.Data),

@@ -14,17 +14,22 @@ public class ServiZapato : IDevolucionService
         _repositorioRazonDevolucion = repoDevolucion;
     }
 
-    Result<IEnumerable<RazonDevolucion>> IDevolucionService.GetDevolucion()
-    {
-        return GetDevolucion();
-    }
+
 
     public Result<RazonDevolucion> AltaDevolucion(RazonDevolucion razonDevolucion)
     {
         throw new NotImplementedException();
     }
 
-     Result<IEnumerable<RazonDevolucion>> GetDevolucion() =>  Result<IEnumerable<RazonDevolucion>>.Ok(_repositorioRazonDevolucion.GetDevolucion());
+    public Result<Devolucion> AltaDevolucion(Devolucion razonDevolucion)
+    {
+        throw new NotImplementedException();
+    }
 
-   
+    Result<IEnumerable<RazonDevolucion>> GetDevolucion() =>  Result<IEnumerable<RazonDevolucion>>.Ok(_repositorioRazonDevolucion.GetDevolucion());
+
+    Result<IEnumerable<DevolucionDto>> IDevolucionService.GetDevolucion()
+    {
+        throw new NotImplementedException();
+    }
 }

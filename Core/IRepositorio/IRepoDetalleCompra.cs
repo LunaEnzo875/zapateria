@@ -5,5 +5,6 @@ namespace Core.IRepositorio;
 public interface IRepoDetalleCompra
 {
     IEnumerable<DetalleCompraDto> GetDetalleCompra();
-    DetalleCompra? DetalleCompra(int idDetalleCompra);
+    DetalleCompra? DetalleDetCompra(int idDetalleCompra);
+    void altaDetalleCompra (DetalleCompraDto DetalleCompra);
 }

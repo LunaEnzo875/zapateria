@@ -26,4 +26,8 @@ public class RepoFabricante : Repo,IRepoFabricante
 
     public IEnumerable<FabricanteDto> GetClientes() => _conexion.Query<FabricanteDto>(_Fabricante);
 
+    public Fabricante? DetalleFabricante(int idFabricante)
+    {
+        throw new NotImplementedException();
+    }
 }

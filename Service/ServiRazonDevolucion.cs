@@ -8,24 +8,24 @@ namespace ServiceZapatos;
 
 public class ServiDevolucion : IDevolucionService
 {
-   public readonly IRepoDevolucion _repositorioDevolucion;
+   public readonly IRepoDevolucion _repoDevolucion;
 
     public ServiDevolucion(IRepoDevolucion repoDevolucion)
     {
-        _repositorioDevolucion = repoDevolucion;
+        _repoDevolucion = repoDevolucion;
     }
 
-    Result<IEnumerable<Devolucion>> IDevolucionService.GetDevolucion()
+     Result<IEnumerable<DevolucionDto>> IDevolucionService.GetDevolucion()
     {
-        return GetDevolucion();
+        throw new NotImplementedException();
     }
-
+    
     public Result<Devolucion> AltaDevolucion(Devolucion Devolucion)
     {
         throw new NotImplementedException();
     }
 
-    public Result<IEnumerable<Devolucion>> GetDevolucion() =>  Result<IEnumerable<Devolucion>>.Ok(_repositorioDevolucion.GetDevolucion());
+    public Result<IEnumerable<RazonDevolucion>> GetDevolucion() =>  Result<IEnumerable<RazonDevolucion>>.Ok(_repoDevolucion.GetDevolucion());
 
    
 }

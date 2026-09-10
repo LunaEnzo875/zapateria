@@ -25,5 +25,8 @@ public class ServiceColor : IColorService
 
     public Result<IEnumerable<ColorDto>> GetColor() => Result<IEnumerable<ColorDto>>.Ok(_IColor.GetColor());
 
-    
+    public Result<ClienteDto> DetalleColor(int idColor)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -9,7 +9,7 @@ public class Devolucion
     public Devolucion (int idDevolucion,DateTime fechaHora,int dni,int idRazon)
     {
         this.idDevolucion = idDevolucion;
-        fechaHora = fechaHora;
+        this.fechaHora = fechaHora;
         this.dni = dni;
         this.idRazon = idRazon;
     }

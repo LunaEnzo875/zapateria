@@ -4,6 +4,7 @@ namespace Core.IRepositorio;
 
 public interface IRepoDevolucion
 {
+    void AltaDevolucion(Devolucion devolucion);
     IEnumerable<DevolucionDto> GetDevolucion();
-    Devolucion? Devolucion(int idDevolucion);
+    Devolucion? DetalleDevolucion(int idDevolucion);
 }

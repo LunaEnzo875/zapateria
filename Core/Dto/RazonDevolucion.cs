@@ -1,5 +1,5 @@
 namespace Core.Dto;
-    public class RazonDevolucion
+    public class RazonDevolucionDto
     {
         public string Descripcion {get; set;}
     }

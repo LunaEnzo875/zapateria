@@ -5,5 +5,5 @@ namespace Core.IService;
 public interface IDevolucionService
 {
     Result<IEnumerable<DevolucionDto>> GetDevolucion();
-    Result<RazonDevolucion> AltaDevolucion(RazonDevolucion razonDevolucion);
+    Result<Devolucion> AltaDevolucion(Devolucion razonDevolucion);
 }

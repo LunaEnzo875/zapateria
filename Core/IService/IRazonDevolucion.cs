@@ -6,5 +6,6 @@ namespace Core.IService;
 public interface IRazonDevolucion
 {
     Result<IEnumerable<RazonDevolucion>> GetRazonDevolucion();
-    Result<IEnumerable<RazonDevolucion>> AltaRazon();     
+    Result<RazonDevolucion> DetalleDevolucion(int idDevolucion);
+    Result<RazonDevolucionDto> AltaRazon();     
 }

@@ -12,10 +12,21 @@ public class RepoDevolucion : Repo, IRepoDevolucion
     {
         this._ado = _ado;
     }
-    public Devolucion? Devolucion(int idDevolucion)
+    public Devolucion? DetalleDevolucion(int idDevolucion)
     {
         throw new NotImplementedException();
     }    
+
+    private static readonly string _altaDevolucion
+        = @"INSERT INTO Devolucion (dni, idRazon, fechaHora)
+            VALUES (@dni, @idRazon, @fechaHora);
+            SELECT LAST_INSERT_ID();";
+
+    public void AltaDevolucion(Devolucion devolucion)
+    {
+        devolucion.idDevolucion = _conexion.QuerySingle<int>(_altaDevolucion, devolucion);
+    }
+
     private static readonly string _Devol
     = "SELECT * FROM Devolucion";
 

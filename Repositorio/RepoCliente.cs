@@ -29,7 +29,11 @@ public class Repocliente : Repo, IRepoCliente
 
     public void AltaCliente(Cliente cliente)
     {
-        throw new NotImplementedException();
+        const string query = @"INSERT INTO Cliente (dni, nombre, apellido, nacimiento, correo)
+                               VALUES (@dni, @nombre, @apellido, @nacimiento, @correo);
+                               SELECT LAST_INSERT_ID();";
+
+        cliente.idCliente = _conexion.QuerySingle<int>(query, cliente);
     }
 
     public void UpdateCliente(Cliente cliente, int id)

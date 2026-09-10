@@ -20,10 +20,19 @@ public class ServiceCliente : IClienteService
     }
     public Result<ClienteDto> AltaCliente(Cliente cliente)
     {
-        throw new NotImplementedException();
+        _ICliente.AltaCliente(cliente);
+        return Result<ClienteDto>.Created(new ClienteDto
+        {
+            idCliente = cliente.idCliente,
+            Nombre = cliente.nombre,
+            apellido = cliente.apellido
+        });
     }
 
     public Result<IEnumerable<ClienteDto>> GetClientes() => Result<IEnumerable<ClienteDto>>.Ok(_ICliente.GetClientes());
 
-    
+    public Result<ClienteDto> DetalleCliente(int idCliente)
+    {
+        throw new NotImplementedException();
+    }
 }
