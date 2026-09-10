@@ -4,7 +4,8 @@ START TRANSACTION;
 INSERT INTO Cliente (idCliente,dni,nombre,apellido,nacimiento,correo) VALUES
 (1,48526379,'Enzo','Luna','2008-04-04','enzoluna760@gmail.com'),
 (2,47702699, 'Ezequiel', 'Lizasoain', '2007-07-06','monkicapo@gmail.com'),
-(3,47396736, 'Carla', 'Gonzalez', '2007-05-12', 'carla.gonzalez@gmail.com');
+(3,47396736, 'Carla', 'Gonzalez', '2007-05-12', 'carla.gonzalez@gmail.com'),
+(4,47482374, 'Cliente', 'Sin especificar', '2000-01-01', 'cliente47482374@example.com');
 
 INSERT INTO Color (idColor,nombre) VALUES
 (1, 'azul'),
