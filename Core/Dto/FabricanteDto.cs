@@ -1,7 +1,7 @@
-namespace  Core.Dto;
+namespace Core.Dto;
 
-public class FabricanteDto 
+public class FabricanteDto
 {
-    public int idFabricante {get; set;}
-    public string NombreFab {get; set;}
+    public int idFabricante { get; set; }
+    public string NombreFab { get; set; } = string.Empty;
 }

@@ -2,11 +2,16 @@ namespace  Core.Entidades;
 
 public class Fabricante 
 {
-    public int idFabricante {get; set;}
-    public string NombreFab {get; set;}
-    public Fabricante(int idFabricante,string NombreFab)
+    public int idFabricante { get; set; }
+    public string NombreFab { get; set; } = string.Empty;
+
+    public Fabricante()
+    {
+    }
+
+    public Fabricante(int idFabricante, string nombreFab)
     {
         this.idFabricante = idFabricante;
-        NombreFab = NombreFab;
+        NombreFab = nombreFab;
     }
 }
