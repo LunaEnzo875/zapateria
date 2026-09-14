@@ -44,20 +44,13 @@ app.MapEndpointsCliente();
 app.MapEndpointsColor();
 app.MapEndpointsCompra();
 app.MapEndpointsDetalleCompra();
+app.MapEndpointsDevolucion();
 app.MapEndpointsFabricante();
 
 app.MapGet("/clientes", (Repocliente repoCliente) =>
 {
     var clientes = repoCliente.GetClientes();
     return Results.Ok(clientes);
-});
-
-app.MapPost("/devoluciones", (Devolucion devolucion, IDevolucionService service) =>
-{
-    var resultado = service.AltaDevolucion(devolucion);
-    return resultado.Success
-        ? Results.Created($"/devoluciones/{resultado.Data!.idDevolucion}", resultado.Data)
-        : Results.BadRequest(resultado);
 });
 
 app.Run();

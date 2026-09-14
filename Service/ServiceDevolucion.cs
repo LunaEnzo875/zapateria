@@ -12,22 +12,20 @@ public class ServiceDevolucion : IDevolucionService
         this._repoDevol = _repoDevol;
     }
 
+    public Result<IEnumerable<DevolucionDto>> GetDevolucion() => Result<IEnumerable<DevolucionDto>>.Ok(_repoDevol.GetDevolucion());//Result<IEnumerable<DevolucionDto>>.Ok(_repoDevol.GetDevolucion());
+
+    public Result<Devolucion> DetalleDevolucion(int idDevolucion)
+    {
+        var devolucion = _repoDevol.DetalleDevolucion(idDevolucion);
+        return devolucion is null
+            ? Result<Devolucion>.NotFound($"No se encontró la devolución con id {idDevolucion}")
+            : Result<Devolucion>.Ok(devolucion);
+    }
+
     public Result<Devolucion> AltaDevolucion(Devolucion razonDevolucion)
     {
         _repoDevol.AltaDevolucion(razonDevolucion);
         return Result<Devolucion>.Created(razonDevolucion);
     }
-
-    public Result<IEnumerable<DevolucionDto>> GetDevolucion()
-    {
-        throw new NotImplementedException();
-    }
-
-    public Result<IEnumerable<RazonDevolucion>> IDevolucionService()
-    {
-        throw new NotImplementedException();
-    }
-
-    
 }
 

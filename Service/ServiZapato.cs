@@ -26,6 +26,14 @@ public class ServiZapato : IDevolucionService
         throw new NotImplementedException();
     }
 
+    public Result<Devolucion> DetalleDevolucion(int idDevolucion)
+    {
+        var devolucion = _repositorioRazonDevolucion.DetalleDevolucion(idDevolucion);
+        return devolucion is null
+            ? Result<Devolucion>.NotFound($"No se encontró la devolución con id {idDevolucion}")
+            : Result<Devolucion>.Ok(devolucion);
+    }
+
     Result<IEnumerable<RazonDevolucion>> GetDevolucion() =>  Result<IEnumerable<RazonDevolucion>>.Ok(_repositorioRazonDevolucion.GetDevolucion());
 
     Result<IEnumerable<DevolucionDto>> IDevolucionService.GetDevolucion()

@@ -19,6 +19,14 @@ public class ServiDevolucion : IDevolucionService
     {
         throw new NotImplementedException();
     }
+
+    public Result<Devolucion> DetalleDevolucion(int idDevolucion)
+    {
+        var devolucion = _repoDevolucion.DetalleDevolucion(idDevolucion);
+        return devolucion is null
+            ? Result<Devolucion>.NotFound($"No se encontró la devolución con id {idDevolucion}")
+            : Result<Devolucion>.Ok(devolucion);
+    }
     
     public Result<Devolucion> AltaDevolucion(Devolucion Devolucion)
     {
