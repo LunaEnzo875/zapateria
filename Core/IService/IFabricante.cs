@@ -1,11 +1,11 @@
-using System;
 using Core.Dto;
 using Core.Entidades;
 
-namespace Core.IService;
+namespace calzadosIService;
 
-    public interface IFabricanteService
+public interface IFabricanteService
 {
     Result<IEnumerable<FabricanteDto>> GetFabricante();
-    Result<FabricanteDto> AltaFabricante();
+    Result<FabricanteDto> DetalleFabricante(int idFabricante);
+    Result<FabricanteDto> AltaFabricante(Fabricante fabricante);
 }

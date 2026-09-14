@@ -3,31 +3,34 @@ using Core.Entidades;
 using Core.IRepositorio;
 using Core.IService;
 using Dapper;
+
 namespace ZapatosRepo;
 
-public class RepoFabricante : Repo,IRepoFabricante
+public class RepoFabricante : Repo, IRepoFabricante
 {
     private readonly IAdo _ado;
+
     public RepoFabricante(IAdo _ado) : base(_ado)
-    {this._ado = _ado;
-    }
-    public IEnumerable<FabricanteDto> GetFabricante()
     {
-        throw new NotImplementedException();
+        this._ado = _ado;
     }
 
-    public Fabricante? Fabricante(int idFabricante)
+    private static readonly string _altaFabricante = @"INSERT INTO Fabricante (idFabricante, NombreFab)
+    VALUES (@idFabricante, @NombreFab);";
+
+    public void AltaFabricante(FabricanteDto fabricante)
     {
-        throw new NotImplementedException();
+        _conexion.Execute(_altaFabricante, new { fabricante.idFabricante, fabricante.NombreFab });
     }
-    private static string _Fabricante
 
-    = "SELECT * FROM fabricante";
+    private static readonly string _detalleFabricante = "SELECT * FROM Fabricante WHERE idFabricante = @idFabricante";
 
-    public IEnumerable<FabricanteDto> GetClientes() => _conexion.Query<FabricanteDto>(_Fabricante);
-
-    public Fabricante? DetalleFabricante(int idFabricante)
+    public FabricanteDto? DetalleFabricante(int idFabricante)
     {
-        throw new NotImplementedException();
+        return _conexion.QueryFirstOrDefault<FabricanteDto>(_detalleFabricante, new { idFabricante });
     }
+
+    private static readonly string _fabricante = "SELECT * FROM Fabricante";
+
+    public IEnumerable<FabricanteDto> GetFabricante() => _conexion.Query<FabricanteDto>(_fabricante);
 }

@@ -5,5 +5,6 @@ namespace Core.IRepositorio;
 public interface IRepoFabricante
 {
     IEnumerable<FabricanteDto> GetFabricante();
-    Fabricante? DetalleFabricante(int idFabricante);
+    FabricanteDto? DetalleFabricante(int idFabricante);
+    void AltaFabricante(FabricanteDto fabricante);
 }

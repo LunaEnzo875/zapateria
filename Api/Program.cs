@@ -26,6 +26,8 @@ builder.Services.AddScoped<IRepoDetalleCompra, RepoDetalleCompra>();
 builder.Services.AddScoped<IDetallleCompraService, ServiceDetCom>();
 builder.Services.AddScoped<IRepoDevolucion, RepoDevolucion>();
 builder.Services.AddScoped<IDevolucionService, ServiceDevolucion>();
+builder.Services.AddScoped<IRepoFabricante, RepoFabricante>();
+builder.Services.AddScoped<IFabricanteService, ServiceFabricante>();
 
 var app = builder.Build();
 
@@ -41,6 +43,8 @@ app.UseHttpsRedirection();
 app.MapEndpointsCliente();
 app.MapEndpointsColor();
 app.MapEndpointsCompra();
+app.MapEndpointsDetalleCompra();
+app.MapEndpointsFabricante();
 
 app.MapGet("/clientes", (Repocliente repoCliente) =>
 {

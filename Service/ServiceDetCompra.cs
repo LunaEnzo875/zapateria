@@ -15,9 +15,19 @@ public class ServiceDetCom : IDetallleCompraService
 
     public Result<DetalleCompraDto> AltaDetallleCompra(DetalleCompra detalleCompra)
     {
-        throw new NotImplementedException();
+        var dto = new DetalleCompraDto
+        {
+            numeroCompra = detalleCompra.numeroCompra,
+            idModelo = detalleCompra.idModelo,
+            talle = detalleCompra.talle,
+            idZapatilla = detalleCompra.idZapatilla,
+            precioUnitario = detalleCompra.precioUnitario,
+            cantidad = detalleCompra.cantidad,
+        };
+
+        repoDetalleCompra.altaDetalleCompra(dto);
+        return Result<DetalleCompraDto>.Created(dto);
     }
 
-
-    public Result<IEnumerable<DetalleCompraDto>> GetDetallleCompra() => Result<IEnumerable<DetalleCompraDto>>.Ok(repoDetalleCompra.GetDetalleCompra());  
+    public Result<IEnumerable<DetalleCompraDto>> GetDetallleCompra() => Result<IEnumerable<DetalleCompraDto>>.Ok(repoDetalleCompra.GetDetalleCompra());
 }
