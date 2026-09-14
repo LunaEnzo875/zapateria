@@ -15,18 +15,23 @@ public class ServiceColor : IColorService
 
     public Result<ColorDto> AltaColor(Color color)
     {
-        throw new NotImplementedException();
-    }
+        var nuevoColor = new ColorDto
+        {
+            idColor = color.idColor,
+            Nombre = color.nombre,
+        };
 
-    Result<IEnumerable<Color>> IColorService.GetColor()
-    {
-        throw new NotImplementedException();
+        _IColor.AltaColor(nuevoColor);
+        return Result<ColorDto>.Created(nuevoColor);
     }
 
     public Result<IEnumerable<ColorDto>> GetColor() => Result<IEnumerable<ColorDto>>.Ok(_IColor.GetColor());
 
-    public Result<ClienteDto> DetalleColor(int idColor)
+    public Result<ColorDto> DetalleColor(int idColor)
     {
-        throw new NotImplementedException();
+        var color = _IColor.DetalleColor(idColor);
+        return color is null
+            ? Result<ColorDto>.NotFound($"No se encontró el color con id {idColor}")
+            : Result<ColorDto>.Ok(color);
     }
 }

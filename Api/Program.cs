@@ -1,18 +1,29 @@
+using Api;
+using Api.Endpoints;
 using Core.Entidades;
 using Core.IRepositorio;
 using Core.IService;
-using Api.Endpoints;
 using Service;
-using ZapatosRepo;
+using Scalar.AspNetCore;
 using ServiceZapatos;
 using calzadosIService;
+using ZapatosRepo;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
 
+builder.Services.AddScoped<IDataBaseConnectionService, DatabaseConnectionService>();
+builder.Services.AddScoped<IGetRolActualService, CurrentRolService>();
+builder.Services.AddScoped<IAdo, Ado>();
+
 builder.Services.AddScoped<Repocliente>();
+builder.Services.AddScoped<IRepoCliente, Repocliente>();
 builder.Services.AddScoped<IClienteService, ServiceCliente>();
+builder.Services.AddScoped<IRepoColor, RepoColor>();
+builder.Services.AddScoped<IColorService, ServiceColor>();
+builder.Services.AddScoped<IRepoDetalleCompra, RepoDetalleCompra>();
+builder.Services.AddScoped<IDetallleCompraService, ServiceDetCom>();
 builder.Services.AddScoped<IRepoDevolucion, RepoDevolucion>();
 builder.Services.AddScoped<IDevolucionService, ServiceDevolucion>();
 
@@ -21,11 +32,15 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+
+    app.MapScalarApiReference(); 
 }
 
 app.UseHttpsRedirection();
 
 app.MapEndpointsCliente();
+app.MapEndpointsColor();
+app.MapEndpointsCompra();
 
 app.MapGet("/clientes", (Repocliente repoCliente) =>
 {

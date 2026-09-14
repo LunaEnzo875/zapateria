@@ -1,38 +1,37 @@
 using Core.Dto;
+using Core.Entidades;
 using Core.IRepositorio;
 using Core.IService;
 using Dapper;
-using System.Drawing;
+
 namespace ZapatosRepo;
 
 public class RepoColor : Repo, IRepoColor
 {
     private readonly IAdo _ado;
+
     public RepoColor(IAdo _ado) : base(_ado)
     {
         this._ado = _ado;
     }
-        public void AltaColor(ColorDto color)
-    {
-        throw new NotImplementedException();
-    }
-    ColorDto? IRepoColor.DetalleColor(int idColor)
-    {
-        throw new NotImplementedException();
-    }
 
-    private static readonly string _Color
-        = "SELECT * FROM Color";
-   
+    private static readonly string _altaColor 
+    = @"INSERT INTO Color (idColor, nombre)
+    VALUES (@idColor, @Nombre);";
 
-    public IEnumerable<ColorDto> GetColor() => _conexion.Query<ColorDto>(_Color); 
-
-    private static readonly string _DetalleColor
-    = "SELECT * FROM Color WHERE  idColor = idColor";
-    public Color DetalleColor (int idColor)
+    public void AltaColor(ColorDto color)
     {
-        return _conexion.QueryFirstOrDefault<Color>(_DetalleColor, new {idColor});
+        _conexion.Execute(_altaColor, new { color.idColor, color.Nombre });
     }
 
-    
+    private static readonly string _detalleColor = "SELECT * FROM Color WHERE idColor = @idColor";
+
+    public ColorDto? DetalleColor(int idColor)
+    {
+        return _conexion.QueryFirstOrDefault<ColorDto>(_detalleColor, new { idColor });
+    }
+
+    private static readonly string _Color = "SELECT * FROM Color";
+
+    public IEnumerable<ColorDto> GetColor() => _conexion.Query<ColorDto>(_Color);
 }

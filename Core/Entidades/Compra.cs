@@ -8,7 +8,7 @@ public class Compra
     public Compra (int numeroCompra,Cliente cliente,DateTime fechaHora)
     {
         this.numeroCompra=numeroCompra;
-        cliente = cliente;
-        fechaHora = fechaHora;
+        this.cliente = cliente;
+        this.fechaHora = fechaHora;
     }
 }

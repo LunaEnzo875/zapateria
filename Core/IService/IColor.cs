@@ -4,7 +4,7 @@ namespace calzadosIService;
 
 public interface IColorService
 {
-    Result<IEnumerable<Color>> GetColor();
-    Result<ClienteDto>DetalleColor(int idColor);
+    Result<IEnumerable<ColorDto>> GetColor();
+    Result<ColorDto> DetalleColor(int idColor);
     Result<ColorDto> AltaColor(Color color);
 }

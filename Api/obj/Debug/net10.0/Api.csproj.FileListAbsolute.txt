@@ -1,12 +1,3 @@
-/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.csproj.AssemblyReference.cache
-/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/rpswa.dswa.cache.json
-/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.GeneratedMSBuildEditorConfig.editorconfig
-/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.AssemblyInfoInputs.cache
-/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.AssemblyInfo.cs
-/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.csproj.CoreCompileInputs.cache
-/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.MvcApplicationPartsAssemblyInfo.cs
-/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.MvcApplicationPartsAssemblyInfo.cache
-/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.sourcelink.json
 /home/et12alumno/Escritorio/zapateria/Api/bin/Debug/net10.0/appsettings.Development.json
 /home/et12alumno/Escritorio/zapateria/Api/bin/Debug/net10.0/appsettings.json
 /home/et12alumno/Escritorio/zapateria/Api/bin/Debug/net10.0/Api.staticwebassets.endpoints.json
@@ -24,6 +15,8 @@
 /home/et12alumno/Escritorio/zapateria/Api/bin/Debug/net10.0/Microsoft.AspNetCore.OpenApi.dll
 /home/et12alumno/Escritorio/zapateria/Api/bin/Debug/net10.0/Microsoft.OpenApi.dll
 /home/et12alumno/Escritorio/zapateria/Api/bin/Debug/net10.0/MySql.Data.dll
+/home/et12alumno/Escritorio/zapateria/Api/bin/Debug/net10.0/Scalar.AspNetCore.dll
+/home/et12alumno/Escritorio/zapateria/Api/bin/Debug/net10.0/Scalar.AspNetCore.Microsoft.dll
 /home/et12alumno/Escritorio/zapateria/Api/bin/Debug/net10.0/System.Configuration.ConfigurationManager.dll
 /home/et12alumno/Escritorio/zapateria/Api/bin/Debug/net10.0/System.Security.Cryptography.ProtectedData.dll
 /home/et12alumno/Escritorio/zapateria/Api/bin/Debug/net10.0/System.Security.Permissions.dll
@@ -41,6 +34,15 @@
 /home/et12alumno/Escritorio/zapateria/Api/bin/Debug/net10.0/Repositorio.pdb
 /home/et12alumno/Escritorio/zapateria/Api/bin/Debug/net10.0/Service.pdb
 /home/et12alumno/Escritorio/zapateria/Api/bin/Debug/net10.0/Core.pdb
+/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.csproj.AssemblyReference.cache
+/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/rpswa.dswa.cache.json
+/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.GeneratedMSBuildEditorConfig.editorconfig
+/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.AssemblyInfoInputs.cache
+/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.AssemblyInfo.cs
+/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.csproj.CoreCompileInputs.cache
+/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.MvcApplicationPartsAssemblyInfo.cs
+/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.MvcApplicationPartsAssemblyInfo.cache
+/home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/Api.sourcelink.json
 /home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/rjimswa.dswa.cache.json
 /home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
 /home/et12alumno/Escritorio/zapateria/Api/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
