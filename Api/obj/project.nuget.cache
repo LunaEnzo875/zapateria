@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+TNwGSEVUis=",
+  "dgSpecHash": "IyVAx7zSlu8=",
   "success": true,
   "projectFilePath": "/home/et12alumno/Escritorio/zapateria/Api/Api.csproj",
   "expectedPackageFiles": [
     "/home/et12alumno/.nuget/packages/bouncycastle.cryptography/2.6.2/bouncycastle.cryptography.2.6.2.nupkg.sha512",
     "/home/et12alumno/.nuget/packages/dapper/2.1.79/dapper.2.1.79.nupkg.sha512",
+    "/home/et12alumno/.nuget/packages/fluentvalidation/12.1.1/fluentvalidation.12.1.1.nupkg.sha512",
     "/home/et12alumno/.nuget/packages/google.protobuf/3.35.0/google.protobuf.3.35.0.nupkg.sha512",
     "/home/et12alumno/.nuget/packages/k4os.compression.lz4/1.3.8/k4os.compression.lz4.1.3.8.nupkg.sha512",
     "/home/et12alumno/.nuget/packages/k4os.compression.lz4.streams/1.3.8/k4os.compression.lz4.streams.1.3.8.nupkg.sha512",
