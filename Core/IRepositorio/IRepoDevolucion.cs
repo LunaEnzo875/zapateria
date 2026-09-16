@@ -7,4 +7,5 @@ public interface IRepoDevolucion
     void AltaDevolucion(Devolucion devolucion);
     IEnumerable<DevolucionDto> GetDevolucion();
     Devolucion? DetalleDevolucion(int idDevolucion);
+    void AltaDevolucion(object razonDevolucion);
 }

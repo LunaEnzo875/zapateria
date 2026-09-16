@@ -4,6 +4,7 @@ namespace Core.IRepositorio;
 
 public interface IRepoModelo
 {
-    IEnumerable<Modelo> GetModelo();
-    Modelo? DetalleModelo(int idModelo);
+    IEnumerable<ModeloDto> GetModelo();
+    ModeloDto? DetalleModelo(int idModelo);
+    void AltaModelo(ModeloDto modelo);
 }

@@ -8,17 +8,14 @@ namespace ServiceZapatos;
 
 public class ServiDevolucion : IDevolucionService
 {
-   public readonly IRepoDevolucion _repoDevolucion;
+    public readonly IRepoDevolucion _repoDevolucion;
 
     public ServiDevolucion(IRepoDevolucion repoDevolucion)
     {
         _repoDevolucion = repoDevolucion;
     }
 
-     Result<IEnumerable<DevolucionDto>> IDevolucionService.GetDevolucion()
-    {
-        throw new NotImplementedException();
-    }
+    public Result<IEnumerable<DevolucionDto>> GetDevolucion() => Result<IEnumerable<DevolucionDto>>.Ok(_repoDevolucion.GetDevolucion());
 
     public Result<Devolucion> DetalleDevolucion(int idDevolucion)
     {
@@ -27,13 +24,10 @@ public class ServiDevolucion : IDevolucionService
             ? Result<Devolucion>.NotFound($"No se encontró la devolución con id {idDevolucion}")
             : Result<Devolucion>.Ok(devolucion);
     }
-    
-    public Result<Devolucion> AltaDevolucion(Devolucion Devolucion)
+
+    public Result<Devolucion> AltaDevolucion(Devolucion devolucion)
     {
-        throw new NotImplementedException();
+        _repoDevolucion.AltaDevolucion(devolucion);
+        return Result<Devolucion>.Created(devolucion);
     }
-
-    public Result<IEnumerable<RazonDevolucion>> GetDevolucion() =>  Result<IEnumerable<RazonDevolucion>>.Ok(_repoDevolucion.GetDevolucion());
-
-   
 }

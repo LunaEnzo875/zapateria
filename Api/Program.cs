@@ -28,6 +28,8 @@ builder.Services.AddScoped<IRepoDevolucion, RepoDevolucion>();
 builder.Services.AddScoped<IDevolucionService, ServiceDevolucion>();
 builder.Services.AddScoped<IRepoFabricante, RepoFabricante>();
 builder.Services.AddScoped<IFabricanteService, ServiceFabricante>();
+builder.Services.AddScoped<IRepoModelo, RepoModelo>();
+builder.Services.AddScoped<IModeloService, ServiModelo>();
 
 var app = builder.Build();
 
@@ -46,6 +48,7 @@ app.MapEndpointsCompra();
 app.MapEndpointsDetalleCompra();
 app.MapEndpointsDevolucion();
 app.MapEndpointsFabricante();
+app.MapEndpointsModelo();
 
 app.MapGet("/clientes", (Repocliente repoCliente) =>
 {
