@@ -14,6 +14,15 @@ public class RepoColor : Repo, IRepoColor
     {
         this._ado = _ado;
     }
+    private static readonly string _Color = "SELECT * FROM Color";
+
+    public IEnumerable<ColorDto> GetColor() => _conexion.Query<ColorDto>(_Color);
+
+    private static readonly string _detalleColor = "SELECT * FROM Color WHERE idColor = @idColor";
+    public ColorDto? DetalleColor(int idColor)
+    {
+        return _conexion.QueryFirstOrDefault<ColorDto>(_detalleColor, new { idColor });
+    }
 
     private static readonly string _altaColor 
     = @"INSERT INTO Color (idColor, nombre)
@@ -27,14 +36,4 @@ public class RepoColor : Repo, IRepoColor
          });
     }
 
-    private static readonly string _detalleColor = "SELECT * FROM Color WHERE idColor = @idColor";
-
-    public ColorDto? DetalleColor(int idColor)
-    {
-        return _conexion.QueryFirstOrDefault<ColorDto>(_detalleColor, new { idColor });
-    }
-
-    private static readonly string _Color = "SELECT * FROM Color";
-
-    public IEnumerable<ColorDto> GetColor() => _conexion.Query<ColorDto>(_Color);
 }
