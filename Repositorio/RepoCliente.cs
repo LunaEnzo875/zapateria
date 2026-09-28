@@ -27,6 +27,15 @@ public class Repocliente : Repo, IRepoCliente
         return _conexion.QueryFirstOrDefault<Cliente>(_queryDetalleCliente, new { idCliente });
     }
 
+    public Task<Cliente?> ObtenerPorIdAsync(int idCliente, CancellationToken cancellationToken = default)
+    {
+        return _conexion.QueryFirstOrDefaultAsync<Cliente>(
+            new CommandDefinition(
+                _queryDetalleCliente,
+                new { idCliente },
+                cancellationToken: cancellationToken));
+    }
+
     public void AltaCliente(Cliente cliente)
     {
         const string query = @"INSERT INTO Cliente (dni, nombre, apellido, nacimiento, correo)
