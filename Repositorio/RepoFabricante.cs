@@ -30,15 +30,6 @@ public class RepoFabricante : Repo, IRepoFabricante
         return _conexion.QueryFirstOrDefault<FabricanteDto>(_detalleFabricante, new { idFabricante });
     }
 
-    public Task<FabricanteDto?> ObtenerPorIdAsync(int idFabricante, CancellationToken cancellationToken = default)
-    {
-        return _conexion.QueryFirstOrDefaultAsync<FabricanteDto>(
-            new CommandDefinition(
-                _detalleFabricante,
-                new { idFabricante },
-                cancellationToken: cancellationToken));
-    }
-
     private static readonly string _fabricante = "SELECT * FROM Fabricante";
 
     public IEnumerable<FabricanteDto> GetFabricante() => _conexion.Query<FabricanteDto>(_fabricante);

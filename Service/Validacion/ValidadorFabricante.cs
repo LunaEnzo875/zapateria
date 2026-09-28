@@ -17,8 +17,7 @@ public class ValidadorFabricante : AbstractValidator<FabricanteDto>
         RuleFor(x => x.idFabricante)
             .Cascade(CascadeMode.Stop)
             .GreaterThan(0).WithMessage("El idFabricante debe ser mayor que 0")
-            .MustAsync(async (idFabricante, cancellationToken) =>
-                await _repositorioFabricante.ObtenerPorIdAsync(idFabricante, cancellationToken) is null)
+            .Must(idFabricante => _repositorioFabricante.DetalleFabricante(idFabricante) is null)
             .WithMessage("El idFabricante ya existe en la base de datos");
     } 
 }

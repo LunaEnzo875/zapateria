@@ -20,8 +20,7 @@ public class ValidadorCliente : AbstractValidator<ClienteDto>
         RuleFor(x => x.idCliente)
             .Cascade(CascadeMode.Stop)
             .GreaterThan(0).WithMessage("El idCliente debe ser mayor que 0")
-            .MustAsync(async (idCliente, cancellationToken) =>
-                await _repositorioCliente.ObtenerPorIdAsync(idCliente, cancellationToken) is null)
+            .Must(idCliente => _repositorioCliente.DetalleCliente(idCliente) is null)
             .WithMessage("El idCliente ya existe en la base de datos");
     }
 }

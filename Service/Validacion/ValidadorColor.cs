@@ -16,8 +16,7 @@ public class ValidadorColor : AbstractValidator<ColorDto>
         RuleFor(x => x.idColor)
             .Cascade(CascadeMode.Stop)
             .GreaterThan(0).WithMessage("El idColor debe ser mayor que 0")
-            .MustAsync(async (idColor, cancellationToken) =>
-                await _repositorioColor.ObtenerPorIdAsync(idColor, cancellationToken) is null)
+            .Must(idColor => _repositorioColor.DetalleColor(idColor) is null)
             .WithMessage("El idColor ya existe en la base de datos");
     }
 }

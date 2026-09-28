@@ -7,6 +7,6 @@ public interface IRepoColor
 {
     IEnumerable<ColorDto> GetColor();
     ColorDto? DetalleColor(int idColor);
-    Task<ColorDto?> ObtenerPorIdAsync(int idColor, CancellationToken cancellationToken = default);
+    
     void AltaColor(ColorDto color);
 }

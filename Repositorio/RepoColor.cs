@@ -21,7 +21,10 @@ public class RepoColor : Repo, IRepoColor
 
     public void AltaColor(ColorDto color)
     {
-        _conexion.Execute(_altaColor, new { color.idColor, color.Nombre });
+        _conexion.Execute(_altaColor, new { 
+            unIdColor=color.idColor,
+            unNombre=color.Nombre
+         });
     }
 
     private static readonly string _detalleColor = "SELECT * FROM Color WHERE idColor = @idColor";
@@ -29,15 +32,6 @@ public class RepoColor : Repo, IRepoColor
     public ColorDto? DetalleColor(int idColor)
     {
         return _conexion.QueryFirstOrDefault<ColorDto>(_detalleColor, new { idColor });
-    }
-
-    public Task<ColorDto?> ObtenerPorIdAsync(int idColor, CancellationToken cancellationToken = default)
-    {
-        return _conexion.QueryFirstOrDefaultAsync<ColorDto>(
-            new CommandDefinition(
-                _detalleColor,
-                new { idColor },
-                cancellationToken: cancellationToken));
     }
 
     private static readonly string _Color = "SELECT * FROM Color";

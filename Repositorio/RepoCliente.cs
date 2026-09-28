@@ -27,27 +27,22 @@ public class Repocliente : Repo, IRepoCliente
         return _conexion.QueryFirstOrDefault<Cliente>(_queryDetalleCliente, new { idCliente });
     }
 
-    public Task<Cliente?> ObtenerPorIdAsync(int idCliente, CancellationToken cancellationToken = default)
-    {
-        return _conexion.QueryFirstOrDefaultAsync<Cliente>(
-            new CommandDefinition(
-                _queryDetalleCliente,
-                new { idCliente },
-                cancellationToken: cancellationToken));
-    }
-
     public void AltaCliente(Cliente cliente)
     {
-        const string query = @"INSERT INTO Cliente (dni, nombre, apellido, nacimiento, correo)
-                               VALUES (@dni, @nombre, @apellido, @nacimiento, @correo);
-                               SELECT LAST_INSERT_ID();";
+        const string query = 
+        @"INSERT INTO Cliente (dni, nombre, apellido, nacimiento, correo)
+        VALUES (@dni, @nombre, @apellido, @nacimiento, @correo);
+        SELECT LAST_INSERT_ID();";
 
         cliente.idCliente = _conexion.QuerySingle<int>(query, cliente);
     }
 
+    private static readonly string _updateCliente = 
+        @"UPDATE Cliente SET dni = @dni, nombre = @nombre, apellido = @apellido, nacimiento = @nacimiento, correo = @correo
+        WHERE idCliente = @idCliente";
     public void UpdateCliente(Cliente cliente, int id)
     {
-        throw new NotImplementedException();
+        _conexion.Execute(_updateCliente, new { cliente.dni, cliente.nombre, cliente.apellido, cliente.nacimiento, cliente.correo, idCliente = id });
     }
 
     public Cliente? DetalleClienteXIdUsuario(int idUsuario)
