@@ -31,6 +31,15 @@ public class RepoColor : Repo, IRepoColor
         return _conexion.QueryFirstOrDefault<ColorDto>(_detalleColor, new { idColor });
     }
 
+    public Task<ColorDto?> ObtenerPorIdAsync(int idColor, CancellationToken cancellationToken = default)
+    {
+        return _conexion.QueryFirstOrDefaultAsync<ColorDto>(
+            new CommandDefinition(
+                _detalleColor,
+                new { idColor },
+                cancellationToken: cancellationToken));
+    }
+
     private static readonly string _Color = "SELECT * FROM Color";
 
     public IEnumerable<ColorDto> GetColor() => _conexion.Query<ColorDto>(_Color);
