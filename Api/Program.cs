@@ -8,6 +8,7 @@ using Scalar.AspNetCore;
 using ServiceZapatos;
 using calzadosIService;
 using ZapatosRepo;
+using Repositorio;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,8 @@ builder.Services.AddScoped<IRepoFabricante, RepoFabricante>();
 builder.Services.AddScoped<IFabricanteService, ServiceFabricante>();
 builder.Services.AddScoped<IRepoModelo, RepoModelo>();
 builder.Services.AddScoped<IModeloService, ServiModelo>();
+builder.Services.AddScoped<IRepoOpinion, RepoOpinion>();
+builder.Services.AddScoped<IOpinionServie, ServiceOpinion>();
 
 var app = builder.Build();
 
@@ -49,6 +52,7 @@ app.MapEndpointsDetalleCompra();
 app.MapEndpointsDevolucion();
 app.MapEndpointsFabricante();
 app.MapEndpointsModelo();
+app.MapEndpointsOpinion();
 
 app.MapGet("/clientes", (Repocliente repoCliente) =>
 {

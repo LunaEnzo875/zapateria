@@ -31,5 +31,29 @@ namespace Repositorio
         {
             return _conexion.QueryFirstOrDefault<Opinion>(_DetalleOpinion, new { dni });
         }
+
+        public bool ExisteModelo(int idModelo) => _conexion.QuerySingle<bool>(
+            "SELECT EXISTS (SELECT 1 FROM Modelo WHERE idModelo = @idModelo)", new { idModelo });
+
+        public bool ExisteCliente(int dni) => _conexion.QuerySingle<bool>(
+            "SELECT EXISTS (SELECT 1 FROM Cliente WHERE dni = @dni)", new { dni });
+
+        public bool ClienteComproModelo(int dni, int idModelo) => _conexion.QuerySingle<bool>(@"
+            SELECT EXISTS (
+                SELECT 1
+                FROM Compra c
+                INNER JOIN DetalleCompra dc ON dc.numeroCompra = c.numeroCompra
+                WHERE c.dni = @dni AND dc.idModelo = @idModelo
+            )", new { dni, idModelo });
+
+        public bool ExisteOpinion(int idModelo, DateTime fechaHora, int dni) => _conexion.QuerySingle<bool>(@"
+            SELECT EXISTS (
+                SELECT 1 FROM Opinion
+                WHERE idModelo = @idModelo AND fechaHora = @fechaHora AND dni = @dni
+            )", new { idModelo, fechaHora, dni });
+
+        public void AltaOpinion(Opinion opinion) => _conexion.Execute(@"
+            INSERT INTO Opinion (dni, idModelo, fechaHora, descripcion, puntaje)
+            VALUES (@dni, @idModelo, @fechaHora, @descripcion, @puntaje)", opinion);
     }
 }

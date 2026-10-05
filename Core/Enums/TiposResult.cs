@@ -6,6 +6,8 @@ public enum TiposResult
     Created,
     NotFound,
     Unauthorized,
+    Forbidden,
+    Conflict,
     BadRequest,
     File
 }

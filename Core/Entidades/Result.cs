@@ -34,6 +34,12 @@ public class Result<T>
     public static Result<T> Unauthorized()
         => new(false, TiposResult.Unauthorized, default, default, default);
 
+    public static Result<T> Forbidden(string message)
+        => new(false, TiposResult.Forbidden, default, message);
+
+    public static Result<T> Conflict(string message)
+        => new(false, TiposResult.Conflict, default, message);
+
     public static Result<T> BadRequest(IDictionary<string, string[]> errors = default, string? message = default)
         => new(false, TiposResult.BadRequest, default, message, errors);
     
