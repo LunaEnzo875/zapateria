@@ -11,5 +11,4 @@ public interface IRepoOpinion
     bool ClienteComproModelo(int dni, int idModelo);
     bool ExisteOpinion(int idModelo, DateTime fechaHora, int dni);
     void AltaOpinion(Opinion opinion);
-    Opinion? RankingOpinion(Opinion opinion,FabricanteDto fabricanteDto,Pais pais);
 }

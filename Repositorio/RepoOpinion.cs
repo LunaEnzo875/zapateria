@@ -53,12 +53,6 @@ namespace Repositorio
             VALUES (@dni, @idModelo, @fechaHora, @descripcion, @puntaje)", opinion);
 
 
-        private static  readonly string _RakingPuntaje
-        = "Select *,Count(Opiniones), IdPais, AVG(puntaje) from Opinion where idFabricante = idFabricante and Pais.nombre = Pais.nombre ";
 
-        public Opinion? RankingOpinion(Opinion opinion, FabricanteDto fabricanteDto, Pais pais) 
-        { 
-            return _conexion.QueryFirst<Opinion>(_RakingPuntaje, new {opinion, fabricanteDto, pais});
-        }
 }
 }

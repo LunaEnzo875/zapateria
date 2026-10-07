@@ -34,9 +34,5 @@ public class ServiceOpinion : IOpinionService
         return Result<Opinion>.Created(opinion);
     }
 
-    public Result<Opinion> RakingOpinion(Opinion opinion, FabricanteDto fabricanteDto, Pais pais)
-    {
-        var si = _repoOpinion.RankingOpinion();
-        return si;
-    }
+
 }

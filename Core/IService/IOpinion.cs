@@ -7,5 +7,4 @@ public interface IOpinionService
 {
     Result<IEnumerable<OpinionDto>> GetOpinion();
     Result<Opinion> AltaOpinion(Opinion opinion);
-    Result<Opinion>RakingOpinion(Opinion opinion,FabricanteDto fabricanteDto,Pais pais);
 }
