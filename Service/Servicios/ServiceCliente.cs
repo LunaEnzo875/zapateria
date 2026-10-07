@@ -14,10 +14,8 @@ public class ServiceCliente : IClienteService
         _ICliente = ICliente;
     }
 
-    Result<IEnumerable<ClienteDto>> IClienteService.GetClientes()
-    {
-        throw new NotImplementedException();
-    }
+    Result<IEnumerable<ClienteDto>> IClienteService.GetClientes() => Result<IEnumerable<ClienteDto>>.Ok(_ICliente.GetClientes());
+    
     public Result<ClienteDto> AltaCliente(Cliente cliente)
     {
         _ICliente.AltaCliente(cliente);

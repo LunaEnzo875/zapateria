@@ -12,7 +12,7 @@ public class ServiceDevolucion : IDevolucionService
         this._repoDevol = _repoDevol;
     }
 
-    public Result<IEnumerable<DevolucionDto>> GetDevolucion() => Result<IEnumerable<DevolucionDto>>.Ok(_repoDevol.GetDevolucion());//Result<IEnumerable<DevolucionDto>>.Ok(_repoDevol.GetDevolucion());
+    public Result<IEnumerable<DevolucionDto>> GetDevolucion() => Result<IEnumerable<DevolucionDto>>.Ok(_repoDevol.GetDevolucion());
 
     public Result<Devolucion> DetalleDevolucion(int idDevolucion)
     {

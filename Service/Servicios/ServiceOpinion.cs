@@ -1,20 +1,21 @@
 using calzadosIService;
+using Core.Dto;
 using Core.Entidades;
 using Core.IRepositorio;
 
 namespace ServiceZapatos;
 
-public class ServiceOpinion : IOpinionServie
+public class ServiceOpinion : IOpinionService
 {
     private readonly IRepoOpinion _repoOpinion;
+
 
     public ServiceOpinion(IRepoOpinion repoOpinion)
     {
         _repoOpinion = repoOpinion;
     }
 
-    public Result<IEnumerable<Opinion>> GetOpinion() => throw new NotImplementedException();
-
+    public Result<IEnumerable<OpinionDto>> GetOpinion() => Result<IEnumerable<OpinionDto>>.Ok(_repoOpinion.GetOpinion());
     public Result<Opinion> AltaOpinion(Opinion opinion)
     {
         if (!_repoOpinion.ExisteModelo(opinion.idModelo))
@@ -22,12 +23,6 @@ public class ServiceOpinion : IOpinionServie
 
         if (!_repoOpinion.ExisteCliente(opinion.dni))
             return Result<Opinion>.NotFound($"No se encontró el cliente con DNI {opinion.dni}");
-
-        if (opinion.puntaje < 0 || opinion.puntaje > 5)
-            return Result<Opinion>.BadRequest(message: "La nota debe estar entre 0 y 5");
-
-        if (opinion.descripcion is null || opinion.descripcion.Length > 45)
-            return Result<Opinion>.BadRequest(message: "La descripción debe tener entre 1 y 45 caracteres");
 
         if (!_repoOpinion.ClienteComproModelo(opinion.dni, opinion.idModelo))
             return Result<Opinion>.Forbidden("El cliente no compró zapatillas de este modelo");
@@ -37,5 +32,11 @@ public class ServiceOpinion : IOpinionServie
 
         _repoOpinion.AltaOpinion(opinion);
         return Result<Opinion>.Created(opinion);
+    }
+
+    public Result<Opinion> RakingOpinion(Opinion opinion, FabricanteDto fabricanteDto, Pais pais)
+    {
+        var si = _repoOpinion.RankingOpinion();
+        return si;
     }
 }

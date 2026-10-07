@@ -1,4 +1,4 @@
-using System;
+
 using Core.Dto;
 using Core.Entidades;
 using Core.IRepositorio;
@@ -15,10 +15,6 @@ public class RepoPais :Repo, IRepoPais
         public RepoPais(IAdo _ado) : base(_ado)
         {
             this._ado = _ado;
-        }
-        public IEnumerable<PaisDto> GetPaises()
-        {
-            return _conexion.Query<PaisDto>(_Pais);
         }
 
         private static readonly string _Pais

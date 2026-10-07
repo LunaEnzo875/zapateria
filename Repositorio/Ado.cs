@@ -1,5 +1,5 @@
 using Core.IService;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using System.Data;
 namespace ZapatosRepo;
 public class Ado : IAdo

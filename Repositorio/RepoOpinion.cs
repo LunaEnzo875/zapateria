@@ -14,15 +14,11 @@ namespace Repositorio
         {
             this._ado = _ado;
         }
-        public IEnumerable<OpinionDto> GetOpinion()
-        {
-            throw new NotImplementedException();
-        }
-
+    
         private static readonly string _Opinion
         = "SELECT * FROM Opinion";
 
-        public IEnumerable<OpinionDto> GetOpinions() => _conexion.Query<OpinionDto>(_Opinion);
+        public IEnumerable<OpinionDto> GetOpinion() => _conexion.Query<OpinionDto>(_Opinion);
 
         private static readonly string _DetalleOpinion 
         = @"SELECT * FROM Opinion WHERE DNI = @DNI";
@@ -55,5 +51,14 @@ namespace Repositorio
         public void AltaOpinion(Opinion opinion) => _conexion.Execute(@"
             INSERT INTO Opinion (dni, idModelo, fechaHora, descripcion, puntaje)
             VALUES (@dni, @idModelo, @fechaHora, @descripcion, @puntaje)", opinion);
-    }
+
+
+        private static  readonly string _RakingPuntaje
+        = "Select *,Count(Opiniones), IdPais, AVG(puntaje) from Opinion where idFabricante = idFabricante and Pais.nombre = Pais.nombre ";
+
+        public Opinion? RankingOpinion(Opinion opinion, FabricanteDto fabricanteDto, Pais pais) 
+        { 
+            return _conexion.QueryFirst<Opinion>(_RakingPuntaje, new {opinion, fabricanteDto, pais});
+        }
+}
 }

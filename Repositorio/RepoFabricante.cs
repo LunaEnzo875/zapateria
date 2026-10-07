@@ -2,7 +2,6 @@ using Core.Dto;
 using Core.Entidades;
 using Core.IRepositorio;
 using Core.IService;
-using Dapper;
 
 namespace ZapatosRepo;
 

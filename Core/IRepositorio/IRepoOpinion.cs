@@ -1,9 +1,5 @@
-using System;
 using Core.Dto;
 using Core.Entidades;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Core.IRepositorio;
 public interface IRepoOpinion
@@ -15,4 +11,5 @@ public interface IRepoOpinion
     bool ClienteComproModelo(int dni, int idModelo);
     bool ExisteOpinion(int idModelo, DateTime fechaHora, int dni);
     void AltaOpinion(Opinion opinion);
+    Opinion? RankingOpinion(Opinion opinion,FabricanteDto fabricanteDto,Pais pais);
 }
