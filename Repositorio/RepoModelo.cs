@@ -39,4 +39,13 @@ public class RepoModelo : Repo, IRepoModelo
     {
         return _conexion.QueryFirstOrDefault<ModeloDto>(_detalleModelo, new { idModelo });
     }
+
+    private static readonly string _RankingModelo = "SELECT * FROM Modelo WHERE idFabricante=@idFabricante and idPais = @idPais";
+
+    public Modelo? RankingModelo()
+    {
+        return _conexion.QueryFirstOrDefault<Modelo>(_RankingModelo);
+    }
+
+ 
 }

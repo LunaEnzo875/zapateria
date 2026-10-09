@@ -37,4 +37,10 @@ public class ServiModelo : IModeloService
         _repoModelo.AltaModelo(nuevoModelo);
         return Result<ModeloDto>.Created(nuevoModelo);
     }
+
+    public Modelo RankingModelo()
+    {
+        var ranking = _repoModelo.RankingModelo();
+        return  ranking;
+    }
 }

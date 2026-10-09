@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IyVAx7zSlu8=",
+  "dgSpecHash": "TZOQyB0ZJ4k=",
   "success": true,
   "projectFilePath": "/home/et12alumno/Escritorio/zapateria/Api/Api.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "/home/et12alumno/.nuget/packages/microsoft.aspnetcore.openapi/10.0.8/microsoft.aspnetcore.openapi.10.0.8.nupkg.sha512",
     "/home/et12alumno/.nuget/packages/microsoft.openapi/2.7.5/microsoft.openapi.2.7.5.nupkg.sha512",
     "/home/et12alumno/.nuget/packages/mysql.data/26.7.0/mysql.data.26.7.0.nupkg.sha512",
+    "/home/et12alumno/.nuget/packages/mysqlconnector/2.6.2/mysqlconnector.2.6.2.nupkg.sha512",
     "/home/et12alumno/.nuget/packages/scalar.aspnetcore/2.17.3/scalar.aspnetcore.2.17.3.nupkg.sha512",
     "/home/et12alumno/.nuget/packages/scalar.aspnetcore.microsoft/2.17.3/scalar.aspnetcore.microsoft.2.17.3.nupkg.sha512",
     "/home/et12alumno/.nuget/packages/system.configuration.configurationmanager/10.0.8/system.configuration.configurationmanager.10.0.8.nupkg.sha512",
