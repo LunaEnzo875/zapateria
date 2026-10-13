@@ -38,9 +38,10 @@ public class ServiModelo : IModeloService
         return Result<ModeloDto>.Created(nuevoModelo);
     }
 
-    public Modelo RankingModelo()
+
+    public Modelo? RankingModelo(int idFabricante, int idPais, int CantidadOpinion)
     {
-        var ranking = _repoModelo.RankingModelo();
+        var ranking = _repoModelo.RankingModelo(idFabricante, idPais,CantidadOpinion);
         return  ranking;
     }
 }

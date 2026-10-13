@@ -7,5 +7,5 @@ public interface IRepoModelo
     IEnumerable<ModeloDto> GetModelo();
     ModeloDto? DetalleModelo(int idModelo);
     void AltaModelo(ModeloDto modelo);
-    Modelo? RankingModelo();
+    Modelo? RankingModelo(int idFabricante, int idPais,int CantidadOpinion);
 }

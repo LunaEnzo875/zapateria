@@ -42,9 +42,14 @@ public class RepoModelo : Repo, IRepoModelo
 
     private static readonly string _RankingModelo = "SELECT * FROM Modelo WHERE idFabricante=@idFabricante and idPais = @idPais";
 
-    public Modelo? RankingModelo()
+    public Modelo? RankingModelo(int idFabricante, int idPais,int CantidadOpinion)
     {
-        return _conexion.QueryFirstOrDefault<Modelo>(_RankingModelo);
+        return _conexion.QueryFirstOrDefault<Modelo>(_RankingModelo, new
+        {
+            idFabricante,
+            idPais,
+            CantidadOpinion
+        });
     }
 
  

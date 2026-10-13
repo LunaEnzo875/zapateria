@@ -23,6 +23,14 @@ public static class EndpointsModelo
                 : Results.NotFound(resultado);
         });
 
+        app.MapGet("/modelos/ranking", (IModeloService service, int idFabricante, int idPais, int CantidadOpinion) =>
+        {
+            var modelo = service.RankingModelo( idFabricante,  idPais, CantidadOpinion);
+            return modelo is null
+                ? Results.NotFound()
+                : Results.Ok(modelo);
+        });
+
         app.MapPost("/modelos", (Modelo modelo, IModeloService service) =>
         {
             var resultado = service.AltaModelo(modelo);

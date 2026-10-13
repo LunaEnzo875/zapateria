@@ -90,7 +90,7 @@ FOREIGN KEY (idColor) REFERENCES Color(idColor)
 
 
 CREATE TABLE Opinion(
-    dni int NOT NULL,
+    idOpinion int NOT NULL,
     idModelo int NOT NULL,
     fechaHora DATETIME NOT NULL,
     descripcion VARCHAR(45) NOT NULL,
