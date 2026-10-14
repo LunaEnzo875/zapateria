@@ -9,5 +9,6 @@ public enum TiposResult
     Forbidden,
     Conflict,
     BadRequest,
-    File
+    File,
+    Unprocessable_Entity
 }

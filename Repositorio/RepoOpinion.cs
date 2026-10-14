@@ -51,8 +51,5 @@ namespace Repositorio
         public void AltaOpinion(Opinion opinion) => _conexion.Execute(@"
             INSERT INTO Opinion (dni, idModelo, fechaHora, descripcion, puntaje)
             VALUES (@dni, @idModelo, @fechaHora, @descripcion, @puntaje)", opinion);
-
-
-
 }
 }
