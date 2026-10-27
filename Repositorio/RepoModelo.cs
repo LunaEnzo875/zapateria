@@ -2,7 +2,7 @@ using Core.Dto;
 using Core.Entidades;
 using Core.IRepositorio;
 using Core.IService;
-using Dapper;
+
 
 namespace ZapatosRepo;
 
@@ -31,7 +31,10 @@ public class RepoModelo : Repo, IRepoModelo
 
     private static readonly string _modelo = "SELECT * FROM Modelo";
 
-    public IEnumerable<ModeloDto> GetModelo() => _conexion.Query<ModeloDto>(_modelo);
+    public IEnumerable<ModeloDto> GetModelo()
+    {
+        return _conexion.Query<ModeloDto>(_modelo);
+    }
 
     private static readonly string _detalleModelo = "SELECT * FROM Modelo WHERE idModelo = @idModelo";
 
@@ -40,9 +43,10 @@ public class RepoModelo : Repo, IRepoModelo
         return _conexion.QueryFirstOrDefault<ModeloDto>(_detalleModelo, new { idModelo });
     }
 
-    private static readonly string _RankingModelo = "SELECT * FROM Modelo WHERE idFabricante=@idFabricante and idPais = @idPais";
 
-    public Modelo? RankingModelo(int idFabricante, int idPais,int CantidadOpinion)
+    private static readonly string _RankingModelo = "SELECT *RANK() OVER (ORDER BY AVG(o.puntaje) DESC, COUNT(*) DESC) AS Posicion, m.idModelo, m.idFabricante, m.nombre AS Nombre, m.idPaisOrigen, ROUND(AVG(o.puntaje), 2) AS Promedio, COUNT(*) AS CantidadOpiniones FROM Opinion O WHERE m.idFabricante = @idFabricante AND m.idPaisOrigen = @idPaisOrigen GROUP BY m.idModelo, m.idFabricante, m.nombre, m.idPaisOrigen HAVING COUNT(*) >= @cantidadOpinion ORDER BY Posicion;" ;
+
+    public IEnumerable<ModeloDto> RankingModelo(int idFabricante, int idPais,int CantidadOpinion)
     {
         return _conexion.QueryFirstOrDefault<Modelo>(_RankingModelo, new
         {
