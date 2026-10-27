@@ -2,6 +2,7 @@ using Core.Dto;
 using Core.Entidades;
 using Core.IRepositorio;
 using Core.IService;
+using Dapper;
 
 
 namespace ZapatosRepo;
@@ -48,7 +49,7 @@ public class RepoModelo : Repo, IRepoModelo
 
     public IEnumerable<ModeloDto> RankingModelo(int idFabricante, int idPais,int CantidadOpinion)
     {
-        return _conexion.QueryFirstOrDefault<Modelo>(_RankingModelo, new
+        return _conexion.Query<ModeloDto>(_RankingModelo, new
         {
             idFabricante,
             idPais,
