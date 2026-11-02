@@ -46,4 +46,8 @@ public class Result<T>
     public static Result<T> File(byte[]? bytes)
         => new(true, TiposResult.File, default, default, default, bytes);
 
+    public static Result<IEnumerable<ModeloDto>> BadRequest(string v)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -3,7 +3,7 @@ using Core.Dto;
 using Core.IRepositorio;
 using calzadosIService;
 
-namespace ServiceZapatos;
+namespace SerdosviceZapatos;
 
 public class ServiModelo : IModeloService
 {
@@ -39,9 +39,23 @@ public class ServiModelo : IModeloService
     }
 
 
-    public Modelo? RankingModelo(int idFabricante, int idPais, int CantidadOpinion)
+    
+
+    Result<IEnumerable<ModeloDto>> IModeloService.RankingModelo(int idFabricante, int idPaisOrigen, int CantidadOpinion = 1)
     {
-        var ranking = _repoModelo.RankingModelo(idFabricante, idPais,CantidadOpinion);
-        return  ranking;
+    if (idFabricante <= 0)
+        return Result<IEnumerable<ModeloDto>>.BadRequest("El id del fabricante no es válido");
+
+    if (idPaisOrigen <= 0)
+        return Result<IEnumerable<ModeloDto>>.BadRequest("El id del país no es válido");
+
+    if (CantidadOpinion < 1)
+        return Result<IEnumerable<ModeloDto>>.BadRequest("La cantidad mínima de opiniones debe ser al menos 1");
+
+    var ranking = _repoModelo.RankingModelo(idFabricante, idPaisOrigen, CantidadOpinion).ToList();
+
+    return ranking.Count == 0
+        ? Result<IEnumerable<ModeloDto>>.NotFound("No hay modelos que cumplan con el mínimo de opiniones")
+        : Result<IEnumerable<ModeloDto>>.Ok(ranking);
     }
 }

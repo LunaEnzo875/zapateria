@@ -7,5 +7,5 @@ public interface IModeloService
     Result<IEnumerable<ModeloDto>> GetModelo();
     Result<ModeloDto> DetalleModelo(int idModelo);
     Result<ModeloDto> AltaModelo(Modelo modelo);
-    Modelo? RankingModelo(int idFabricante, int idPais,int CantidadOpinion);
+    Result<IEnumerable<ModeloDto>> RankingModelo(int idFabricante, int idPaisOrigen,int CantidadOpinion = 1);
 }
