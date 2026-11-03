@@ -34,6 +34,7 @@ builder.Services.AddScoped<IModeloService, ServiModelo>();
 builder.Services.AddScoped<IRepoOpinion, RepoOpinion>();
 builder.Services.AddScoped<IOpinionServie, ServiceOpinion>();
 
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

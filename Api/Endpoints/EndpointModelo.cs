@@ -23,12 +23,16 @@ public static class EndpointsModelo
                 : Results.NotFound(resultado);
         });
 
-        app.MapGet("/modelos/ranking", (IModeloService service, int idFabricante, int idPais, int CantidadOpinion) =>
+        app.MapGet("/modelos/ranking", (
+            IModeloService service,
+            int idFabricante,
+            int idPaisOrigen,
+            int cantidadOpinion = 1) =>
         {
-            var modelo = service.RankingModelo( idFabricante,  idPais, CantidadOpinion);
-            return modelo is null
-                ? Results.NotFound()
-                : Results.Ok(modelo);
+            var resultado = service.RankingModelo(idFabricante, idPaisOrigen, cantidadOpinion);
+            return resultado.Success
+                ? Results.Ok(resultado.Data)
+                : Results.NotFound(resultado);
         });
 
         app.MapPost("/modelos", (Modelo modelo, IModeloService service) =>
@@ -38,5 +42,6 @@ public static class EndpointsModelo
                 ? Results.Created($"/modelos/{resultado.Data!.idModelo}", resultado.Data)
                 : Results.BadRequest(resultado);
         });
+
     }
 }
