@@ -3,7 +3,7 @@ using Core.Dto;
 using Core.IRepositorio;
 using calzadosIService;
 
-namespace SerdosviceZapatos;
+namespace ServiceZapatos;
 
 public class ServiModelo : IModeloService
 {

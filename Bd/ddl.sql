@@ -95,6 +95,6 @@ CREATE TABLE Opinion(
     fechaHora DATETIME NOT NULL,
     descripcion VARCHAR(45) NOT NULL,
     puntaje DECIMAL(2,1) NOT NULL,
-    PRIMARY KEY (idModelo, fechaHora, dni),
+    PRIMARY KEY (idModelo, fechaHora),
     FOREIGN KEY (idModelo) REFERENCES Modelo (idModelo) 
 );

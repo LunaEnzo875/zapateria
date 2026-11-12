@@ -9,7 +9,7 @@ public static class EndpointOpinion
 {
     public static void MapEndpointsOpinion(this WebApplication app)
     {
-        app.MapPost("/modelos/{id:int}/opiniones", (int id, CrearOpinionRequest request, IOpinionServie service) =>
+        app.MapPost("/modelos/{id:int}/opiniones", (int id, CrearOpinionRequest request, IOpinionService service) =>
         {
             if (!int.TryParse(request.ClienteDni, NumberStyles.None, CultureInfo.InvariantCulture, out var dni))
                 return Results.BadRequest(new { message = "cliente_dni debe ser un DNI numérico" });

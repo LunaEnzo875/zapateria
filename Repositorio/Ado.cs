@@ -1,6 +1,7 @@
 using Core.IService;
 using MySqlConnector;
 using System.Data;
+
 namespace ZapatosRepo;
 public class Ado : IAdo
 {

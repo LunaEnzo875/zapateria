@@ -17,5 +17,11 @@ public static class EndpointsCliente
                 ? Results.Created($"/clientes/{resultado.Data!.idCliente}", resultado.Data)
                 : Results.BadRequest(resultado);
         });
+
+        app.MapGet("/clientes", (IClienteService service) =>
+        {
+            var clientes = service.GetClientes();
+            return Results.Ok(clientes);
+        });
     }
 }

@@ -6,9 +6,9 @@ using Core.IService;
 using Service;
 using Scalar.AspNetCore;
 using ServiceZapatos;
+using Repositorio;
 using calzadosIService;
 using ZapatosRepo;
-using Repositorio;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +18,7 @@ builder.Services.AddScoped<IDataBaseConnectionService, DatabaseConnectionService
 builder.Services.AddScoped<IGetRolActualService, CurrentRolService>();
 builder.Services.AddScoped<IAdo, Ado>();
 
-builder.Services.AddScoped<Repocliente>();
+
 builder.Services.AddScoped<IRepoCliente, Repocliente>();
 builder.Services.AddScoped<IClienteService, ServiceCliente>();
 builder.Services.AddScoped<IRepoColor, RepoColor>();
@@ -32,7 +32,7 @@ builder.Services.AddScoped<IFabricanteService, ServiceFabricante>();
 builder.Services.AddScoped<IRepoModelo, RepoModelo>();
 builder.Services.AddScoped<IModeloService, ServiModelo>();
 builder.Services.AddScoped<IRepoOpinion, RepoOpinion>();
-builder.Services.AddScoped<IOpinionServie, ServiceOpinion>();
+builder.Services.AddScoped<IOpinionService, ServiceOpinion>();
 
 
 var app = builder.Build();
@@ -54,11 +54,5 @@ app.MapEndpointsDevolucion();
 app.MapEndpointsFabricante();
 app.MapEndpointsModelo();
 app.MapEndpointsOpinion();
-
-app.MapGet("/clientes", (Repocliente repoCliente) =>
-{
-    var clientes = repoCliente.GetClientes();
-    return Results.Ok(clientes);
-});
 
 app.Run();
