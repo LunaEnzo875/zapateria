@@ -81,7 +81,7 @@ INSERT INTO Zapatilla (idZapatilla,idModelo,talle,stock,nombre) VALUES
 (3,3,35,450,"Alina Fiorella Martinez Roa"),
 (4,4,35,450,"Sofia Gonzalez Acosta"),
 (5,1,35,540,"Yanina Medina Piuca"),
-(6,3,35,600,"Celeste Luciana Zurita"),
+(6,3,35,600,"Celeste Edith Zurita"),
 (7,2,35,777,"Tihago Pistan"),
 (8,2,35,666,"Fabricio Valentino Cuello"),
 (1,1,40,500,"Lujan"),
