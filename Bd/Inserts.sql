@@ -71,7 +71,7 @@ INSERT INTO Zapatilla (idZapatilla,idModelo,talle,stock,nombre) VALUES
 (1,1,30,500,"Ezequiel Lautaro Lizasoain"),
 (2,2,30,450,"Enzo Nicolas Luna"),
 (3,3,30,450,"Luka Pasandi Dabek"),
-(4,4,30,450,"Sebastian Alberto Zerpa"),
+(4,4,30,450,"Sebastian Alberto Zerpa Sierra"),
 (5,1,30,540,"Carla Gonzalez"),
 (6,3,30,600,"celedoño"),
 (7,2,30,777,"Maycol Kevin Alconz"),
