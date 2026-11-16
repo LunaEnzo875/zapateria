@@ -58,7 +58,7 @@ INSERT INTO Opinion (dni,idModelo,fechaHora,descripcion,puntaje) VALUES
 INSERT INTO Pais (idPais,nombre) VALUES
 (1,'Argentina'),
 (2,'Paraguay'),
-(3,'China'),
+(3,'Peru'),
 (4,'Brasil');
 
 INSERT INTO RazonDevolucion (idRazon,Descripcion) VALUES
